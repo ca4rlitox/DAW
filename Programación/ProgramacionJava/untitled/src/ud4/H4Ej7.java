@@ -12,7 +12,7 @@ public class H4Ej7 {
         //Definimos arrays y varibles y asignamos espacio en RAM.
         final int TAM = 10;
         int[] nums = new int[11];
-        int i,j,k = 0;
+        int i, j, k = 0;
         //Habilitamos escaner
         Scanner entrada = new Scanner(System.in);
 
@@ -21,8 +21,12 @@ public class H4Ej7 {
             System.out.println("Introduce 10 numeros. Llevas: " + i);
             nums[i] = entrada.nextInt();
 
-
+            if (i >= 9) {
+                for (nums[i] = nums[i];nums[i] < TAM; )
+                System.out.println(nums[1]);
             }
+
 
         }
     }
+}
