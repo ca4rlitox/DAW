@@ -1,0 +1,154 @@
+{\rtf1\ansi\deff3\adeflang1025
+{\fonttbl{\f0\froman\fprq2\fcharset0 Times New Roman;}{\f1\froman\fprq2\fcharset2 Symbol;}{\f2\fswiss\fprq2\fcharset0 Arial;}{\f3\froman\fprq2\fcharset0 Liberation Serif{\*\falt Times New Roman};}{\f4\fswiss\fprq2\fcharset0 Liberation Sans{\*\falt Arial};}{\f5\fnil\fprq2\fcharset0 Microsoft YaHei;}{\f6\fswiss\fprq0\fcharset128 Lucida Sans;}{\f7\fnil\fprq2\fcharset0 Lucida Sans;}}
+{\colortbl;\red0\green0\blue0;\red0\green0\blue255;\red0\green255\blue255;\red0\green255\blue0;\red255\green0\blue255;\red255\green0\blue0;\red255\green255\blue0;\red255\green255\blue255;\red0\green0\blue128;\red0\green128\blue128;\red0\green128\blue0;\red128\green0\blue128;\red128\green0\blue0;\red128\green128\blue0;\red128\green128\blue128;\red192\green192\blue192;}
+{\stylesheet{\s0\snext0\rtlch\af7\afs24\alang1081 \ltrch\lang3082\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang3082\kerning1\dbch\af8\langfe2052 Normal;}
+{\s15\sbasedon0\snext16\rtlch\af7\afs28 \ltrch\hich\af4\loch\sb240\sa120\keepn\f4\fs28\dbch\af5 T\u237\'edtulo;}
+{\s16\sbasedon0\snext16\loch\sl276\slmult1\sb0\sa140 Body Text;}
+{\s17\sbasedon16\snext17\rtlch\af6 \ltrch\loch\sl276\slmult1\sb0\sa140 List;}
+{\s18\sbasedon0\snext18\rtlch\af6\afs24\ai \ltrch\loch\sb120\sa120\noline\fs24\i caption;}
+{\s19\sbasedon0\snext19\rtlch\af6 \ltrch\loch\noline \u205\'cdndice;}
+{\s20\sbasedon0\snext20\loch\tqc\tx4819\tqr\tx9638\noline Cabecera y pie;}
+{\s21\sbasedon20\snext21\loch\tqc\tx4819\tqr\tx9638\noline footer;}
+}{\*\generator LibreOffice/24.8.3.2$Windows_X86_64 LibreOffice_project/48a6bac9e7e268aeb4c3483fcf825c94556d9f92}{\info{\creatim\yr0\mo0\dy0\hr0\min0}{\revtim\yr2025\mo10\dy21\hr19\min41}{\printim\yr0\mo0\dy0\hr0\min0}}{\*\userprops}\deftab709
+\hyphauto1\viewscale100\formshade\paperh16838\paperw11906\margl1134\margr1134\margt1134\margb1134\sectd\sbknone\sftnnar\saftnnrlc\sectunlocked1\pgwsxn11906\pghsxn16838\marglsxn1134\margrsxn1134\margtsxn1134\margbsxn1693\footery1134{\footer\pard\plain \s21\loch\tqc\tx4819\tqr\tx9638\noline\ql\tqc\tx4819\tqr\tx9638\noline\ltrpar\loch
+
+\par }\ftnbj\ftnstart1\ftnrstcont\ftnnar\fet\aftnrstcont\aftnstart1\aftnnrlc
+{\*\ftnsep\chftnsep}\pgndec\pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang3082\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang3082\kerning1\dbch\af8\langfe2052\ql\ltrpar{\rtlch\alang255 \ltrch\lang255\langfe255\loch\lang255\dbch\langfe255\loch
+1) select actor.actor_id AS actor_id,actor.first_name AS first_name,actor.last_name AS last_name,count(film_actor.film_id) AS total_films from film_actor JOIN actor USING(actor_id) GROUP BY actor.actor_id;}
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang3082\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang3082\kerning1\dbch\af8\langfe2052\ql\ltrpar\rtlch\alang255 \ltrch\lang255\langfe255\loch\lang255\dbch\langfe255\loch
+
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang3082\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang3082\kerning1\dbch\af8\langfe2052\ql\ltrpar{\rtlch\alang255 \ltrch\lang255\langfe255\loch\lang255\dbch\langfe255\loch
+2) select actor.actor_id AS actor_id,actor.first_name AS first_name,actor.last_name AS last_name,count(film_actor.film_id) AS films_20plus from film_actor JOIN actor USING(actor_id) GROUP BY actor.actor_id HAVING count(film_actor.film_id) >= 20;}
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang3082\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang3082\kerning1\dbch\af8\langfe2052\ql\ltrpar\rtlch\alang255 \ltrch\lang255\langfe255\loch\lang255\dbch\langfe255\loch
+
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang3082\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang3082\kerning1\dbch\af8\langfe2052\ql\ltrpar{\rtlch\alang255 \ltrch\lang255\langfe255\loch\lang255\dbch\langfe255\loch
+3) select language.language_id AS language_id,language.name AS language_name, count(language.language_id) AS films_in_language from language JOIN film USING(language_id) GROUP BY language_id;}
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang3082\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang3082\kerning1\dbch\af8\langfe2052\ql\ltrpar\rtlch\alang255 \ltrch\lang255\langfe255\loch\lang255\dbch\langfe255\loch
+
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang3082\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang3082\kerning1\dbch\af8\langfe2052\ql\ltrpar{\rtlch\alang255 \ltrch\lang255\langfe255\loch\lang255\dbch\langfe255\loch
+4) select language.language_id,language.name AS language_name,avg(film.length) AS avg_length from language JOIN film USING(language_id) GROUP BY language_id;}
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang3082\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang3082\kerning1\dbch\af8\langfe2052\ql\ltrpar\rtlch\alang255 \ltrch\lang255\langfe255\loch\lang255\dbch\langfe255\loch
+
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang3082\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang3082\kerning1\dbch\af8\langfe2052\ql\ltrpar{\rtlch\alang255 \ltrch\lang255\langfe255\loch\lang255\dbch\langfe255\loch
+5) SELECT film.film_id,film.title,count(inventory_id) AS copies from film JOIN inventory USING(film_id) GROUP BY film.film_id}
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang3082\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang3082\kerning1\dbch\af8\langfe2052\ql\ltrpar\rtlch\alang255 \ltrch\lang255\langfe255\loch\lang255\dbch\langfe255\loch
+
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang3082\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang3082\kerning1\dbch\af8\langfe2052\ql\ltrpar{\rtlch\alang255 \ltrch\lang255\langfe255\loch\lang255\dbch\langfe255\loch
+6) SELECT film.film_id,film.title,count(inventory.film_id) AS copies_5plus from film JOIN inventory USING(film_id) GROUP BY film_id; }
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang3082\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang3082\kerning1\dbch\af8\langfe2052\ql\ltrpar\rtlch\alang255 \ltrch\lang255\langfe255\loch\lang255\dbch\langfe255\loch
+
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang3082\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang3082\kerning1\dbch\af8\langfe2052\ql\ltrpar{\rtlch\alang255 \ltrch\lang255\langfe255\loch\lang255\dbch\langfe255\loch
+7) select inventory.inventory_id,count(rental.inventory_id) AS rentals from inventory JOIN rental USING(inventory_id) GROUP BY}
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang3082\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang3082\kerning1\dbch\af8\langfe2052\ql\ltrpar\rtlch\alang255 \ltrch\lang255\langfe255\loch\lang255\dbch\langfe255\loch
+
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang3082\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang3082\kerning1\dbch\af8\langfe2052\ql\ltrpar{\rtlch\alang255 \ltrch\lang255\langfe255\loch\lang255\dbch\langfe255\loch
+8) select customer.customer_id,customer.first_name,customer.last_name,count(rental.rental_id) AS total_rentals from customer JOIN rental USING(customer_id) GROUP BY customer.customer_id;}
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang3082\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang3082\kerning1\dbch\af8\langfe2052\ql\ltrpar\rtlch\alang255 \ltrch\lang255\langfe255\loch\lang255\dbch\langfe255\loch
+
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang3082\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang3082\kerning1\dbch\af8\langfe2052\ql\ltrpar{\rtlch\alang255 \ltrch\lang255\langfe255\loch\lang255\dbch\langfe255\loch
+9) select customer.customer_id,customer.first_name,customer.last_name,count(rental.rental_id) AS total_rentals from customer JOIN rental USING(customer_id) GROUP BY customer.customer_id HAVING count(rental.rental_id) >=30;}
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang3082\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang3082\kerning1\dbch\af8\langfe2052\ql\ltrpar\rtlch\alang255 \ltrch\lang255\langfe255\loch\lang255\dbch\langfe255\loch
+
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang3082\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang3082\kerning1\dbch\af8\langfe2052\ql\ltrpar{\rtlch\alang255 \ltrch\lang255\langfe255\loch\lang255\dbch\langfe255\loch
+10) select customer.customer_id,customer.first_name,customer.last_name,SUM(payment.amount) AS total_amount from customer JOIN payment USING(customer_id) GROUP BY customer.customer_id;}
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang3082\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang3082\kerning1\dbch\af8\langfe2052\ql\ltrpar\rtlch\alang255 \ltrch\lang255\langfe255\loch\lang255\dbch\langfe255\loch
+
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang3082\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang3082\kerning1\dbch\af8\langfe2052\ql\ltrpar{\rtlch\alang255 \ltrch\lang255\langfe255\loch\lang255\dbch\langfe255\loch
+11) select customer.customer_id,customer.first_name,customer.last_name,SUM(payment.amount) AS total_amount from customer JOIN payment USING(customer_id) GROUP BY customer.customer_id HAVING SUM(payment.amount) >= 200;}
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang3082\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang3082\kerning1\dbch\af8\langfe2052\ql\ltrpar\rtlch\alang255 \ltrch\lang255\langfe255\loch\lang255\dbch\langfe255\loch
+
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang3082\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang3082\kerning1\dbch\af8\langfe2052\ql\ltrpar{\rtlch\alang255 \ltrch\lang255\langfe255\loch\lang255\dbch\langfe255\loch
+12) select staff.staff_id,staff.first_name,staff.last_name,count(payment.payment_id) AS payments_processed from staff JOIN payment USING(staff_id) GROUP BY staff_id;}
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang3082\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang3082\kerning1\dbch\af8\langfe2052\ql\ltrpar\rtlch\alang255 \ltrch\lang255\langfe255\loch\lang255\dbch\langfe255\loch
+
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang3082\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang3082\kerning1\dbch\af8\langfe2052\ql\ltrpar{\rtlch\alang255 \ltrch\lang255\langfe255\loch\lang255\dbch\langfe255\loch
+13) select staff.staff_id,staff.first_name,staff.last_name,SUM(payment.amount) AS total_processed from staff JOIN payment USING(staff_id) GROUP BY staff_id;}
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang3082\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang3082\kerning1\dbch\af8\langfe2052\ql\ltrpar\rtlch\alang255 \ltrch\lang255\langfe255\loch\lang255\dbch\langfe255\loch
+
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang3082\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang3082\kerning1\dbch\af8\langfe2052\ql\ltrpar{\rtlch\alang255 \ltrch\lang255\langfe255\loch\lang255\dbch\langfe255\loch
+14) select store.store_id,count(inventory.inventory_id) AS total_inventory_items from store JOIN inventory USING(store_id) GROUP BY store.store_id;}
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang3082\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang3082\kerning1\dbch\af8\langfe2052\ql\ltrpar\rtlch\alang255 \ltrch\lang255\langfe255\loch\lang255\dbch\langfe255\loch
+
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang3082\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang3082\kerning1\dbch\af8\langfe2052\ql\ltrpar{\rtlch\alang255 \ltrch\lang255\langfe255\loch\lang255\dbch\langfe255\loch
+15) select store.store_id,count(customer.customer_id) AS customers_in_store from store JOIN customer USING(store_id) GROUP BY store.store_id;}
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang3082\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang3082\kerning1\dbch\af8\langfe2052\ql\ltrpar\rtlch\alang255 \ltrch\lang255\langfe255\loch\lang255\dbch\langfe255\loch
+
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang3082\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang3082\kerning1\dbch\af8\langfe2052\ql\ltrpar{\rtlch\alang255 \ltrch\lang255\langfe255\loch\lang255\dbch\langfe255\loch
+16)  select store.store_id,count(staff.staff_id) }{\rtlch\alang255 \ltrch\lang255\langfe255\loch\lang255\dbch\langfe255\loch
+AS staff_in_store }{\rtlch\alang255 \ltrch\lang255\langfe255\loch\lang255\dbch\langfe255\loch
+from store JOIN }{\rtlch\alang255 \ltrch\lang255\langfe255\loch\lang255\dbch\langfe255\loch
+staff}{\rtlch\alang255 \ltrch\lang255\langfe255\loch\lang255\dbch\langfe255\loch
+ }{\rtlch\alang255 \ltrch\lang255\langfe255\loch\lang255\dbch\langfe255\loch
+USING}{\rtlch\alang255 \ltrch\lang255\langfe255\loch\lang255\dbch\langfe255\loch
+(}{\rtlch\alang255 \ltrch\lang255\langfe255\loch\lang255\dbch\langfe255\loch
+store}{\rtlch\alang255 \ltrch\lang255\langfe255\loch\lang255\dbch\langfe255\loch
+_id) GROUP BY store.store_id;}
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang3082\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang3082\kerning1\dbch\af8\langfe2052\ql\ltrpar\rtlch\alang255 \ltrch\lang255\langfe255\loch\lang255\dbch\langfe255\loch
+
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang3082\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang3082\kerning1\dbch\af8\langfe2052\ql\ltrpar{\rtlch\alang255 \ltrch\lang255\langfe255\loch\lang255\dbch\langfe255\loch
+17) select address.address_id,address.address,count(address.address) AS stores_here from address JOIN store USING(address_id) GROUP BY store.store_id;}
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang3082\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang3082\kerning1\dbch\af8\langfe2052\ql\ltrpar\rtlch\alang255 \ltrch\lang255\langfe255\loch\lang255\dbch\langfe255\loch
+
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang3082\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang3082\kerning1\dbch\af8\langfe2052\ql\ltrpar{\rtlch\alang255 \ltrch\lang255\langfe255\loch\lang255\dbch\langfe255\loch
+18) select address.address_id,address.address,count(staff.staff_id) AS staff_here from address JOIN staff USING(address_id) GROUP BY address.address_id;}
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang3082\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang3082\kerning1\dbch\af8\langfe2052\ql\ltrpar\rtlch\alang255 \ltrch\lang255\langfe255\loch\lang255\dbch\langfe255\loch
+
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang3082\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang3082\kerning1\dbch\af8\langfe2052\ql\ltrpar{\rtlch\alang255 \ltrch\lang255\langfe255\loch\lang255\dbch\langfe255\loch
+19)  select address.address_id,address.address,count}{\rtlch\alang255 \ltrch\lang255\langfe255\loch\lang255\dbch\langfe255\loch
+(custo}{\rtlch\alang255 \ltrch\lang255\langfe255\loch\lang255\dbch\langfe255\loch
+m}{\rtlch\alang255 \ltrch\lang255\langfe255\loch\lang255\dbch\langfe255\loch
+er.customer_id) }{\rtlch\alang255 \ltrch\lang255\langfe255\loch\lang255\dbch\langfe255\loch
+AS customers_here from address JOIN customer USING(address_id) GROUP BY address.address_id;}
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang3082\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang3082\kerning1\dbch\af8\langfe2052\ql\ltrpar\rtlch\alang255 \ltrch\lang255\langfe255\loch\lang255\dbch\langfe255\loch
+
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang3082\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang3082\kerning1\dbch\af8\langfe2052\ql\ltrpar{\rtlch\alang255 \ltrch\lang255\langfe255\loch\lang255\dbch\langfe255\loch
+20) select city.city_id,city.city,count(address.address) AS addresses_in_city from city JOIN address USING(city_id) GROUP BY city.city_id;}
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang3082\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang3082\kerning1\dbch\af8\langfe2052\ql\ltrpar\rtlch\alang255 \ltrch\lang255\langfe255\loch\lang255\dbch\langfe255\loch
+
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang3082\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang3082\kerning1\dbch\af8\langfe2052\ql\ltrpar{\rtlch\alang255 \ltrch\lang255\langfe255\loch\lang255\dbch\langfe255\loch
+21) select country.country_id,country.country,count(city.city_id) AS cities_in_country from country JOIN city USING(country_id) GROUP BY country.country_id;}
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang3082\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang3082\kerning1\dbch\af8\langfe2052\ql\ltrpar\rtlch\alang255 \ltrch\lang255\langfe255\loch\lang255\dbch\langfe255\loch
+
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang3082\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang3082\kerning1\dbch\af8\langfe2052\ql\ltrpar{\rtlch\alang255 \ltrch\lang255\langfe255\loch\lang255\dbch\langfe255\loch
+22) }{\rtlch\alang255 \ltrch\lang255\langfe255\loch\lang255\dbch\langfe255\loch
+select language.language_id,language.name AS language_name,}{\rtlch\alang255 \ltrch\lang255\langfe255\loch\lang255\dbch\langfe255\loch
+avg(}{\rtlch\alang255 \ltrch\lang255\langfe255\loch\lang255\dbch\langfe255\loch
+film.length}{\rtlch\alang255 \ltrch\lang255\langfe255\loch\lang255\dbch\langfe255\loch
+)}{\rtlch\alang255 \ltrch\lang255\langfe255\loch\lang255\dbch\langfe255\loch
+ AS avg_length from language JOIN film USING(language_id) }{\rtlch\alang255 \ltrch\lang255\langfe255\loch\lang255\dbch\langfe255\loch
+WHERE film.length BETWEEN 90 AND 120 }{\rtlch\alang255 \ltrch\lang255\langfe255\loch\lang255\dbch\langfe255\loch
+GROUP BY language_id;  /}{\rtlch\alang255 \ltrch\lang255\langfe255\loch\lang255\dbch\langfe255\loch
+* La correcci\u243\'f3n de esta es incorrecta) */}
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang3082\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang3082\kerning1\dbch\af8\langfe2052\ql\ltrpar\rtlch\alang255 \ltrch\lang255\langfe255\loch\lang255\dbch\langfe255\loch
+
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang3082\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang3082\kerning1\dbch\af8\langfe2052\ql\ltrpar{\rtlch\alang255 \ltrch\lang255\langfe255\loch\lang255\dbch\langfe255\loch
+23) }{\rtlch\alang255 \ltrch\lang255\langfe255\loch\lang255\dbch\langfe255\loch
+SELECT film.film_id,film.title,count(}{\rtlch\alang255 \ltrch\lang255\langfe255\loch\lang255\dbch\langfe255\loch
+rental.rental}{\rtlch\alang255 \ltrch\lang255\langfe255\loch\lang255\dbch\langfe255\loch
+_id) AS }{\rtlch\alang255 \ltrch\lang255\langfe255\loch\lang255\dbch\langfe255\loch
+total_rentals}{\rtlch\alang255 \ltrch\lang255\langfe255\loch\lang255\dbch\langfe255\loch
+ from film }{\rtlch\alang255 \ltrch\lang255\langfe255\loch\lang255\dbch\langfe255\loch
+JOIN inventory USING (film_id) }{\rtlch\alang255 \ltrch\lang255\langfe255\loch\lang255\dbch\langfe255\loch
+JOIN }{\rtlch\alang255 \ltrch\lang255\langfe255\loch\lang255\dbch\langfe255\loch
+rental}{\rtlch\alang255 \ltrch\lang255\langfe255\loch\lang255\dbch\langfe255\loch
+ USING(}{\rtlch\alang255 \ltrch\lang255\langfe255\loch\lang255\dbch\langfe255\loch
+inventory}{\rtlch\alang255 \ltrch\lang255\langfe255\loch\lang255\dbch\langfe255\loch
+_id) GROUP BY film.film_id;}
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang3082\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang3082\kerning1\dbch\af8\langfe2052\ql\ltrpar\rtlch\alang255 \ltrch\lang255\langfe255\loch\lang255\dbch\langfe255\loch
+
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang3082\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang3082\kerning1\dbch\af8\langfe2052\ql\ltrpar{\rtlch\alang255 \ltrch\lang255\langfe255\loch\lang255\dbch\langfe255\loch
+24) }{\rtlch\alang255 \ltrch\lang255\langfe255\loch\lang255\dbch\langfe255\loch
+select customer.customer_id,customer.first_name,customer.last_name,}{\rtlch\alang255 \ltrch\lang255\langfe255\loch\lang255\dbch\langfe255\loch
+count(payment.payment_date) AS payments_2005 from customer JOIN payment USING(customer_id) WHERE }{\rtlch\alang255 \ltrch\lang255\langfe255\loch\lang255\dbch\langfe255\loch
+year(}{\rtlch\alang255 \ltrch\lang255\langfe255\loch\lang255\dbch\langfe255\loch
+payment.payment_date}{\rtlch\alang255 \ltrch\lang255\langfe255\loch\lang255\dbch\langfe255\loch
+)}{\rtlch\alang255 \ltrch\lang255\langfe255\loch\lang255\dbch\langfe255\loch
+ = 2005 GROUP BY }{\rtlch\alang255 \ltrch\lang255\langfe255\loch\lang255\dbch\langfe255\loch
+customer.customer_id;}
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang3082\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang3082\kerning1\dbch\af8\langfe2052\ql\ltrpar\rtlch\alang255 \ltrch\lang255\langfe255\loch\lang255\dbch\langfe255\loch
+
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang3082\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang3082\kerning1\dbch\af8\langfe2052\ql\ltrpar{\rtlch\alang255 \ltrch\lang255\langfe255\loch\lang255\dbch\langfe255\loch
+25)  }{\rtlch\alang255 \ltrch\lang255\langfe255\loch\lang255\dbch\langfe255\loch
+SELECT film.film_id,film.title,}{\rtlch\alang255 \ltrch\lang255\langfe255\loch\lang255\dbch\langfe255\loch
+avg(}
+\par }
