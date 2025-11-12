@@ -24,5 +24,6 @@ vector3 = ["Ana","Cabron","Mamon",57,5,20.8]
 #for i in range(len(vector3)):
 #    print(i, "-", vector3[i])
 
-#Se pueden sobreescribir datos de un array de esta manera.
-vector3[3] = "gogogo"
+#for i in range(len(vector3),1,3):
+#    print(i, " - ",vector3[i])
+
