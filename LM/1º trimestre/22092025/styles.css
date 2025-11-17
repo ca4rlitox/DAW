@@ -1,0 +1,20 @@
+        h1 ~ h2{
+         color:rgb(101, 54, 145);
+         text-align: center;
+         justify-content: center;
+         font-family: 'Times New Roman', Times, serif;
+         font-size: 50px;
+        }
+
+
+        .ejemplo{
+            font-size:40px;
+            margin-left: 40px;
+            color:green;
+        }
+
+        .textaco{
+            font-size: 30px;
+            color:rgb(0, 0, 0);
+            font-family:Arial, Helvetica, sans-serif;
+        }
