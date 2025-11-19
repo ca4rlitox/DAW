@@ -22,9 +22,17 @@ public class H5Ej12bis {
 
     public static void rellena(int[] nums) {
 
-        for (int i=0;i<TAM;i++) {
+        for (int i = 0; i < TAM; i++) {
             System.out.println("Introduce número: ");
-            nums[i]= entrada.nextInt();
+            nums[i] = entrada.nextInt();
         }
     }
+
+    public static void rellena2(int[] mas) {
+        int aux=0;
+        for (int i=0;i<TAM;i++) {
+
+            }
+    }
+
 }
