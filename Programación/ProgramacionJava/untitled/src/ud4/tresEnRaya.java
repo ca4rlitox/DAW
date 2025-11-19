@@ -103,9 +103,10 @@ public class tresEnRaya {
 
     public static void mueveJugador2(int pos) {
 
-        movimientoValido(pos);
-        tablero[pos] = 'O';
-
+        do {
+            movimientoValido(pos);
+            tablero[pos] = 'O';
+        }while(!movimientoValido(pos));
     }
 
     public static boolean movimientoValido(int pos) {
