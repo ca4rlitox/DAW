@@ -13,3 +13,6 @@ cifrado = (texto
         .replace('o', '0').replace('O', '0'))
 
 print(cifrado)
+
+while cifrado != "h0l4":
+    print("Error")

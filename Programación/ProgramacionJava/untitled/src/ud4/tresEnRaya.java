@@ -5,6 +5,8 @@ import java.util.Scanner;
 public class tresEnRaya {
     static Scanner in = new Scanner(System.in);
     static char[] tablero = new char[9];
+    static char fichaJugador1;
+    static char fichaJugador2;
 
     public static void main(String[] args) {
         //Creamos las variables necesarias
@@ -27,6 +29,9 @@ public class tresEnRaya {
                 case 1:
                     //Hacemos aquí otro do while fuera de la funcion iniciar para evitar que se reinicie la partida cada vez que da la vuelta el tablero
                     iniciar();
+                    //Solicitamos mediante una función que el jugador 1 elija su ficha.
+                    seleccionarFichas();
+
                     do {
                         //Dibujamos el tablero si empieza, o cada ronda
                         dibujaTablero();
@@ -40,13 +45,13 @@ public class tresEnRaya {
                         //Comprobamos mediante la funcion ganaJugador1 si están las piezas puestas para ganar, y si lo están termina la partida y
                         //suma a la estadística una victoria para el jugador 1.
                         if (ganaJugador1()) {
-                            System.out.println("Ha ganado el jugador 1!\n");
+                            muestraResultado();
                             estadisticas++;
                             break;
                         }
 
-                        if (!quedanCasillas()) {
-                            System.out.println("Ya no quedan casillas.\n");
+                        if (!quedanCasillas() && esEmpate()) {
+                            muestraResultado();
                             break;
                         }
 
@@ -54,17 +59,17 @@ public class tresEnRaya {
                         jugador2 = in.nextInt();
                         //En la funcion mueveJugador2 verificamos si el movimiento con la funcion movimientoValido es válido y hacemos el movimiento
                         mueveJugador2(jugador2);
+                        dibujaTablero();
                         //Comprobamos mediante la funcion ganaJugador2 si están las piezas puestas para ganar, y si lo están termina la partida y
                         //suma a la estadística una victoria para el jugador 2.
                         if (ganaJugador2()) {
-                            dibujaTablero();
-                            System.out.println("Ha ganado el jugador 2!\n");
+                            muestraResultado();
                             estadisticas2++;
                             break;
                         }
                         // Verificamos si quedan casillas después de que el jugador2 ha puesto.
-                            if (!quedanCasillas()) {
-                                System.out.println("Ya no quedan casillas.\n");
+                            if (!quedanCasillas() && esEmpate()) {
+                                muestraResultado();
                                 break;
                             }
 
@@ -109,10 +114,36 @@ public class tresEnRaya {
 
 
     public static void iniciar() {
-        //Con un bucle for ponemos un espacio en cada array para que se vea vacio.
+        //Con un bucle for ponemos un espacio en cada array para que se vea vacio y limpiamos las fichas de los jugadores con la variable creada.
         char vaciar=' ';
+        fichaJugador1= vaciar;
+        fichaJugador2= vaciar;
+
         for (int i=0;i<9;i++) {
             tablero[i] = vaciar;
+        }
+
+    }
+
+    public static void seleccionarFichas() {
+        // Limpiamos buffer del teclado ya que si no salta error OutOfBounds.
+        in.nextLine();
+        // Pedimos al jugador 1 que elija ficha.
+        System.out.println("Jugador 1, elige la ficha. Tiene que ser X o O.");
+        fichaJugador1 = in.nextLine().charAt(0);
+        if (fichaJugador1 != 'X' && fichaJugador1 != 'O') {
+            do {
+                System.out.println("Ficha elegida no válida. Tiene que ser X o O.");
+                fichaJugador1 = in.nextLine().charAt(0);
+            } while (fichaJugador1 != 'X' && fichaJugador1 != 'O');
+        }
+
+        // Aqui le damos la ficha sobrante al jugador 2
+        if (fichaJugador1 == 'X') {
+            fichaJugador2 = 'O';
+        }
+        else {
+            fichaJugador2 = 'X';
         }
 
     }
@@ -126,7 +157,7 @@ public class tresEnRaya {
             }while (!movimientoValido(pos));
         }
         //Una vez verificado que la casilla está libre, se coloca la ficha.
-        tablero[pos - 1] = 'X';
+        tablero[pos - 1] = fichaJugador1;
 
     }
 
@@ -140,7 +171,7 @@ public class tresEnRaya {
             }while (!movimientoValido(pos));
         }
         //Una vez verificado que la casilla está libre, se coloca la ficha.
-        tablero[pos - 1] = 'O';
+        tablero[pos - 1] = fichaJugador2;
 
     }
 
@@ -168,35 +199,35 @@ public class tresEnRaya {
     public static boolean ganaJugador1() {
 
         //Aqui comprobamos las posiciones para ver si el jugador 1 ha ganado.
-        if ((tablero[0]=='X') && (tablero[4]=='X') && (tablero[8]=='X')) {
+        if ((tablero[0]==fichaJugador1) && (tablero[4]==fichaJugador1) && (tablero[8]==fichaJugador1)) {
 
             return true;
         }
-        else if ((tablero[2]=='X') && (tablero[4]=='X') && (tablero[6]=='X')) {
+        else if ((tablero[2]==fichaJugador1) && (tablero[4]==fichaJugador1) && (tablero[6]==fichaJugador1)) {
 
             return true;
         }
-        else if ((tablero[0]=='X') && (tablero[1]=='X') && (tablero[2]=='X')) {
+        else if ((tablero[0]==fichaJugador1) && (tablero[1]==fichaJugador1) && (tablero[2]==fichaJugador1)) {
 
             return true;
         }
-        else if ((tablero[3]=='X') && (tablero[4]=='X') && (tablero[5]=='X')) {
+        else if ((tablero[3]==fichaJugador1) && (tablero[4]==fichaJugador1) && (tablero[5]==fichaJugador1)) {
 
             return true;
         }
-        else if ((tablero[6]=='X') && (tablero[7]=='X') && (tablero[8]=='X')) {
+        else if ((tablero[6]==fichaJugador1) && (tablero[7]==fichaJugador1) && (tablero[8]==fichaJugador1)) {
 
             return true;
         }
-        else if ((tablero[0]=='X') && (tablero[3]=='X') && (tablero[6]=='X')) {
+        else if ((tablero[0]==fichaJugador1) && (tablero[3]==fichaJugador1) && (tablero[6]==fichaJugador1)) {
 
             return true;
         }
-        else if ((tablero[1]=='X') && (tablero[4]=='X') && (tablero[7]=='X')) {
+        else if ((tablero[1]==fichaJugador1) && (tablero[4]==fichaJugador1) && (tablero[7]==fichaJugador1)) {
 
             return true;
         }
-        else if ((tablero[2]=='X') && (tablero[5]=='X') && (tablero[8]=='X')) {
+        else if ((tablero[2]==fichaJugador1) && (tablero[5]==fichaJugador1) && (tablero[8]==fichaJugador1)) {
 
             return true;
         }
@@ -208,35 +239,35 @@ public class tresEnRaya {
     public static boolean ganaJugador2() {
 
         //Aqui comprobamos las posiciones para ver si el jugador 2 ha ganado.
-        if ((tablero[0]=='O') && (tablero[4]=='O') && (tablero[8]=='O')) {
+        if ((tablero[0]==fichaJugador2) && (tablero[4]==fichaJugador2) && (tablero[8]==fichaJugador2)) {
 
             return true;
         }
-        else if ((tablero[2]=='O') && (tablero[4]=='O') && (tablero[6]=='O')) {
+        else if ((tablero[2]==fichaJugador2) && (tablero[4]==fichaJugador2) && (tablero[6]==fichaJugador2)) {
 
             return true;
         }
-        else if ((tablero[0]=='O') && (tablero[1]=='O') && (tablero[2]=='O')) {
+        else if ((tablero[0]==fichaJugador2) && (tablero[1]==fichaJugador2) && (tablero[2]==fichaJugador2)) {
 
             return true;
         }
-        else if ((tablero[3]=='O') && (tablero[4]=='O') && (tablero[5]=='O')) {
+        else if ((tablero[3]==fichaJugador2) && (tablero[4]==fichaJugador2) && (tablero[5]==fichaJugador2)) {
 
             return true;
         }
-        else if ((tablero[6]=='O') && (tablero[7]=='O') && (tablero[8]=='O')) {
+        else if ((tablero[6]==fichaJugador2) && (tablero[7]==fichaJugador2) && (tablero[8]==fichaJugador2)) {
 
             return true;
         }
-        else if ((tablero[0]=='O') && (tablero[3]=='O') && (tablero[6]=='O')) {
+        else if ((tablero[0]==fichaJugador2) && (tablero[3]==fichaJugador2) && (tablero[6]==fichaJugador2)) {
 
             return true;
         }
-        else if ((tablero[1]=='O') && (tablero[4]=='O') && (tablero[7]=='O')) {
+        else if ((tablero[1]==fichaJugador2) && (tablero[4]==fichaJugador2) && (tablero[7]==fichaJugador2)) {
 
             return true;
         }
-        else if ((tablero[2]=='O') && (tablero[5]=='O') && (tablero[8]=='O')) {
+        else if ((tablero[2]==fichaJugador2) && (tablero[5]==fichaJugador2) && (tablero[8]==fichaJugador2)) {
 
             return true;
         }
@@ -245,4 +276,27 @@ public class tresEnRaya {
 
     }
 
-}
+    public static boolean esEmpate () {
+        //Comprobamos si las casillas están ocupadas con la funcion quedanCasillas
+            if (!quedanCasillas()) {
+                return true;
+            }
+
+        return false;
+    }
+
+    public static void muestraResultado () {
+        //Mostramos el mensaje de si ha ganado el jugador 1.
+        if (ganaJugador1()) {
+            System.out.println("¡Ha ganado el jugador 1!");
+        }
+        //Mostramos el mensaje de si ha ganado el jugador 1.
+        else if (ganaJugador2()) {
+            System.out.println("¡Ha ganado el jugador 2!");
+        }
+        //Mostramos el mensaje si la partida ha quedado en empate.
+        else if (esEmpate()) {
+            System.out.println("La partida queda en empate.");
+        }
+    }
+    }

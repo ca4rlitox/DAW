@@ -34,3 +34,5 @@ print(matriz)
 # Funcion reverse
 texto1 = texto.reverse()
 print(lista)
+
+#Comprobar si es un string
