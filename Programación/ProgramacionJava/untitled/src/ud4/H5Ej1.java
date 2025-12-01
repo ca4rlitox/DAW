@@ -12,7 +12,6 @@ public class H5Ej1 {
     public static void hola() {
         //cuerpo
         System.out.println("Gola");
-        return;
 
     }
 

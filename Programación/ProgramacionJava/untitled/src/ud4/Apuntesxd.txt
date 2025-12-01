@@ -1,0 +1,33 @@
+Clase Scanner
+
+Paso 1: Construir objetos
+Scanner entrada; // Damos nombre al objeto
+clase   nombre objeto
+
+Objeto definido vale null
+
+entrada = new Scanner(System.in)
+nombre    RAM   metodo constructor  () parametro de entrada (buffer teclado)
+
+
+Paso 2: Usamos el objeto
+entrada.metodo(parametro)
+
+Ejemplo:
+entrada.nextInt();
+entrada.metodo(parametro)
+
+Paso 3: Liberar RAM o destruir el objeto (garbage collector)
+
+||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+
+Clase String
+1) Construccion
+String cadena=new String();
+Cadena vacia.
+
+String cadena= " ";
+
+2) Usar cadenas
+Operador concatenacion -> +
+

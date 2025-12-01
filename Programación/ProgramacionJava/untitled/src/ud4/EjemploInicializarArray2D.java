@@ -1,5 +1,6 @@
 package ud4;
 
+
 public class EjemploInicializarArray2D {
     public static void main(String[] args) {
 
@@ -16,31 +17,22 @@ public class EjemploInicializarArray2D {
                 {2, 8, 7, 4, 1, 9, 6, 3, 5},
                 {3, 4, 5, 2, 8, 6, 1, 7, 9}
         };
-
         validarSudoku(sudoku);
-
     }
     //Creamos una funcion para validar el sudoku
-    public static boolean validarSudoku (int[][] sudoku) {
-        //Inicializamos booleanos para comprobas filas, cubos y columnas.
+    public static void validarSudoku (int[][] sudoku) {
+
         boolean filas;
-        boolean cubo=true;
-        boolean columnas;
+        int iftrue = 0;
 
-        // Primero comprobamos que la fila no tenga el mismo número repetido
-
-        for (int i = 0;i<9;i++) {
-            for (int j = 0;i<9;i++) {
-
-            if (sudoku[i][j] == sudoku[i][j]) {
-
+        for (int i=0;i<9;i++) {
+            for (int j = 0;j<9;j++) {
+                if (sudoku[i][j]!=sudoku[j][i]) {
+                    iftrue++;
+                }
+                }
             }
-            }
-
+        System.out.println(iftrue);
         }
-
-        return cubo;
-
-
     }
-}
+

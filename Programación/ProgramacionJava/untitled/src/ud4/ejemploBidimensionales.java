@@ -12,12 +12,12 @@ public class ejemploBidimensionales {
         for (int i = 0;i<2;i++) {
             for (int j = 0;i<3;i++) {
                 System.out.println("Introduce un número: ");
-                matriz[i][j] = entrada.nextInt();
+                matriz[j][i] = entrada.nextInt();
             }
         }
         for (int i = 0;i<2;i++) {
             for (int j = 0;i<3;i++) {
-                System.out.println(matriz[i][j]+" ");
+                System.out.println(matriz[j][i]+" ");
             }
             System.out.println();
         }
