@@ -40,13 +40,10 @@ public class H6Ej7 {
         for (int i = 0;i<cad.length();i++) {
 
             if (cad.charAt(i) == char1) {
-                char2 = char2;
-                cadSustituida = cadSustituida + char2;
+                cadSustituida+=char2;
+            } else {
+                cadSustituida+=cad.charAt(i);
             }
-            else {
-                cadSustituida= cadSustituida + cad.charAt(i);
-            }
-
 
         }
         System.out.println(cadSustituida);
