@@ -38,7 +38,7 @@ public class H6Ej8 {
                 caracter = toUpperCase(caracter);
                 cadenaConvertida = cadenaConvertida + caracter;
             }
-            else if (caracter==' ') {
+            else {
                 cadenaConvertida = cadenaConvertida + caracter;
             }
 

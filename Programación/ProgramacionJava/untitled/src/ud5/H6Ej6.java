@@ -23,7 +23,7 @@ public class H6Ej6 {
         String cadenaInvertida="";
         char caracter;
 
-        for (int i = cadena.length()-1;i<cadena.length()-1;i--) {
+        for (int i = cadena.length()-1;i>=0;i--) {
 
             caracter=cadena.charAt(i);
             cadenaInvertida=cadenaInvertida+caracter;
