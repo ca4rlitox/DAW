@@ -16,6 +16,19 @@ public class H6Ej12 {
         //Habilitamos escaner
         Scanner entrada = new Scanner(System.in);
 
+        //Habilitamos arrays
+
+        String[] productos = new String [10];
+        int[] precios =  new int [10];
+        int[] stock = new int[10];
+        int opcion=0;
+
+        do{
+
+
+
+
+        } while (opcion!=4);
 
 
 

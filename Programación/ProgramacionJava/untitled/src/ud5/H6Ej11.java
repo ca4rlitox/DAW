@@ -37,14 +37,13 @@ public class H6Ej11 {
     public static boolean dosPuntosSeguidos(String puntosSeguidos) {
 
         String[] separador = puntosSeguidos.split("@");
-        String palabra = separador[1];
 
-        for (int i = separador.length - 1; i != 0; i--) {
-            if ((palabra.charAt(0) & palabra.charAt(1)) == '.') {
-                return false;
-            }
+        if (separador[1].indexOf("..") ==-1) {
+            return true;
         }
-        return true;
+
+        return false;
+
     }
 
     public static boolean contieneEspacio (String contieneEspacio) {
