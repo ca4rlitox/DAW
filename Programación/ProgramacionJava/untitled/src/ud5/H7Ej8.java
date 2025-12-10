@@ -51,6 +51,6 @@ public class H7Ej8 {
         }
 
         //Fuera del bucle ponemos la tirada al 15, ya que queremos que solo salga una vez
-        System.out.println("\nTirada al 15: " + partidos[plenoalquinceAle] + " - " + plenoal15[plenoalquinceAle]);
+        System.out.println("\nPleno al 15: " + partidos[plenoalquinceAle] + " = " + plenoal15[plenoalquinceAle]);
     }
 }

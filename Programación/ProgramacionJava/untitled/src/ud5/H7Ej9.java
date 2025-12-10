@@ -13,6 +13,7 @@ public class H7Ej9 {
         //Habilitamos variable
         int num = 0;
         int nummAle;
+        int i=0;
 
         //Hacemos bucle para generar numeros hasta que salga el 24
         int numAle;
@@ -20,8 +21,10 @@ public class H7Ej9 {
             numAle = genAle.nextInt(100)+1;
             if (numAle % 2 == 0) {
                 num++;
+                i++;
+                System.out.println(i + ". " + numAle);
             }
         } while (numAle != 24);
-        System.out.println("Ha salido el 24 tras " + num + " tiradas!");
+        System.out.println("Ha salido el 24 tras " + i + " tiradas!");
     }
 }
