@@ -9,6 +9,7 @@ public class H7Ej2 {
         Random genAle = new Random();
         int suma=0;
         int numAle = genAle.nextInt(6)+1;
+        int[] decimo = new int[5];
 
         for (int i = 0;i<3;i++) {
             int numAlea = genAle.nextInt(6)+1;
@@ -16,6 +17,16 @@ public class H7Ej2 {
             suma+= numAlea;
         }
         System.out.println("La suma de las tiradas es "+suma);
+
+        for (int i = 0; i < 5; i++) {
+
+            decimo[i] = genAle.nextInt(10);
+
+        }
+        for (int i = 0; i < 5; i++) {
+
+            System.out.print("Tu decimo con suerte es el "+decimo[i]);
+        }
 
     }
 }
