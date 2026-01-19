@@ -19,7 +19,12 @@ public class Tiempo {
 
     //2º Constructor
     public Tiempo (int h,int m,int s) {
-        horas=h;
+        if (h>=0 && h<=23) {
+            horas = h;
+        }
+        else {
+            horas = 0;
+        }
         minutos=m;
         segundos=s;
     }

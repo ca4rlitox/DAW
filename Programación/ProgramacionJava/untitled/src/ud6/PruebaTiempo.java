@@ -4,7 +4,8 @@ public class PruebaTiempo {
 
     public static void main (String[] args) {
 
-        Tiempo t = new Tiempo(2,03,04);
+        Tiempo t = new Tiempo(30,3,4);
+        System.out.println(t.toString());
 
         t.setSegundos(9);
         t.setMinutos(4);
