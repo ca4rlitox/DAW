@@ -10,5 +10,9 @@ public class UsoPassword {
         System.out.println(contra1.esFuerte());
         System.out.println(contra1.generarPasswd(4));
         System.out.println(contra1.getContraseñayLength());
+        Password contra2 = new Password();
+
+        System.out.println(contra2);
+
             }
 }

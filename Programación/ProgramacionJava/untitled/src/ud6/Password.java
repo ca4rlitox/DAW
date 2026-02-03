@@ -9,6 +9,11 @@ public class Password {
     int longitud;
     String contraseña;
 
+    public Password() {
+        contraseña=generaPasswd();
+        longitud=contraseña.length();
+    }
+
     public Password (String passwd) {
         longitud = passwd.length();
         this.contraseña = passwd;
@@ -69,6 +74,22 @@ public class Password {
         }
         longitud = contraseña.length();
         return "OK";
+    }
+
+    public String generaPasswd () {
+        String cad="";
+        Random genAle = new Random();
+        int longitud=genAle.nextInt(64);
+        String cadena = "aAbBcCdDeEfFgGhHiIjJkKlLmMnNoOpPqQrRsStTuUvVwWxXyYzZ1234567890";
+        for (int i = 0; i < longitud; i++) {
+            char caracter = cadena.charAt(genAle.nextInt(cadena.length()));
+            cad+=caracter;
+        }
+        return cad;
+    }
+
+    public String toString() {
+        return "Contraseña: "+contraseña+" longitud: "+longitud;
     }
 
 
