@@ -40,6 +40,17 @@ public class Tienda {
         }
         return false;
     }
+    public boolean borrarProducto(String nombre) {
+        for (int i = 0; i < espacioOcupado; i++) {
+            Productos p = productos[i];
+            if (p.getNombre().equals(nombre)) {
+                productos[i] = null;
+                return true;
+            }
+        }
+        return false;
+    }
+
     public String toString() {
         String cad="";
         for (int i = 0; i < espacioOcupado; i++) {
