@@ -29,6 +29,7 @@ public class UsoTienda {
                         precio = sc.nextDouble();
                         t.darAlta(new Productos(nombre,stock,precio));
                         System.out.println("Producto dado de alta correctamente.\n"+t.toString());
+                        sc.nextLine();
                         break;
                     case 2:
                         sc.nextLine();
@@ -55,8 +56,16 @@ public class UsoTienda {
                         break;
                     case 4:
                         System.out.println("Has salido.");
+                        break;
+                    case 5:
+                        sc.nextLine();
+                        System.out.print("Indica el nombre de lo que quieres borrar: ");
+                        nombre = sc.nextLine();
+                        t.borrarProducto(nombre);
+                        sc.nextLine();
                     default:
                         System.out.println("Opción no válida");
+                        sc.nextLine();
                 }
                 sc.nextLine();
         } while (opcion != 4);

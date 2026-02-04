@@ -44,7 +44,10 @@ public class Tienda {
         for (int i = 0; i < espacioOcupado; i++) {
             Productos p = productos[i];
             if (p.getNombre().equals(nombre)) {
-                productos[i] = null;
+                productos[i].setNombre(null);
+                productos[i].setStock(0);
+                productos[i].setPrecio(0);
+                espacioOcupado--;
                 return true;
             }
         }
