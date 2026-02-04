@@ -19,16 +19,15 @@ public class UsoClase {
             System.out.println("4. Para mostrar el alumno con mas nota y el alumno con menos nota");
             System.out.println("5. Para salir");
             opcion = entrada.nextInt();
+            entrada.nextLine();
             switch(opcion){
                 case 1:
                     System.out.println("Introduce el alumno a dar de alta: ");
-                    entrada.nextInt();
                     alumno = entrada.nextLine();
                     System.out.println("Introduce la nota del alumno: ");
                     nota = entrada.nextDouble();
                     n = new Notas(alumno, nota);
-                    entrada.nextInt();
-                    entrada.nextDouble();
+                    System.out.println("Añadido correctamente.");
                     break;
                 case 2:
                     entrada.nextInt();
@@ -56,7 +55,6 @@ public class UsoClase {
                     System.out.println("Has salido.");
 
             }
-            entrada.nextInt();
         }while(opcion!=5);
 
 

@@ -70,17 +70,19 @@ public class Clase {
         }
         return conMas;
     }
-    public Notas alumnoConMenosNota() {
+    public String alumnoConMenosNota() {
         double menor = 10;
         Notas conMenos = null;
+        String tS = "";
         for (int i = 0; i < numAlumnos; i++) {
             Notas n =  notas[i];
             if (n.getNota() < menor) {
                 menor = n.getNota();
                 conMenos = notas[i];
             }
+            tS= conMenos.toString();
         }
-        return conMenos;
+        return tS;
     }
 
     public String toString() {
