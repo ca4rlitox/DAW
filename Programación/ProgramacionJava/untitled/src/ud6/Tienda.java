@@ -9,7 +9,6 @@ public class Tienda {
         productos = new Productos[10];
         espacioOcupado = 0;
     }
-
     public boolean darAlta(Productos prod) {
         if (espacioOcupado == 10) {
             return false;
@@ -44,10 +43,7 @@ public class Tienda {
         for (int i = 0; i < espacioOcupado; i++) {
             Productos p = productos[i];
             if (p.getNombre().equals(nombre)) {
-                productos[i].setNombre(null);
-                productos[i].setStock(0);
-                productos[i].setPrecio(0);
-                espacioOcupado--;
+                productos[i] = null;
                 return true;
             }
         }
