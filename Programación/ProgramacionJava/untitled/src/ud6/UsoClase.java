@@ -26,7 +26,7 @@ public class UsoClase {
                     alumno = entrada.nextLine();
                     System.out.println("Introduce la nota del alumno: ");
                     nota = entrada.nextDouble();
-                    n = new Notas(alumno, nota);
+                    c1.darAlta(new Notas(alumno,nota));
                     System.out.println("Añadido correctamente.");
                     break;
                 case 2:
@@ -53,7 +53,7 @@ public class UsoClase {
                     break;
                 case 5:
                     System.out.println("Has salido.");
-
+                    break;
             }
         }while(opcion!=5);
 
