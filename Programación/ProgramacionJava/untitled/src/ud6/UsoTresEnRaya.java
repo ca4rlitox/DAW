@@ -8,11 +8,13 @@ public class UsoTresEnRaya {
         Scanner entrada = new Scanner(System.in);
         int opcion=0;
         int pos;
+        String continuarPartidaRobotica;
 
         do {
             System.out.println("1. Jugar partida humana");
             System.out.println("2. Jugar partida contra un robot");
             System.out.println("3. Ver una partida róbotica");
+            System.out.println("4. Salir");
             opcion= entrada.nextInt();
             switch (opcion) {
                 case 1:
@@ -60,6 +62,8 @@ public class UsoTresEnRaya {
                     } while (tresEnRaya.quedanMovimientos() || !tresEnRaya.ganaJugador1() || !tresEnRaya.ganaJugador2());
                     break;
                 case 2:
+                    tresEnRaya.iniciar();
+                    tresEnRaya.DibujaTablero();
                     do {
                         System.out.println("Jugador 1, te toca mover: ");
                         pos = entrada.nextInt();
@@ -82,7 +86,7 @@ public class UsoTresEnRaya {
                         System.out.println("Tirada robótica: ");
                         tresEnRaya.mueveOrdenador2();
                         tresEnRaya.DibujaTablero();
-                        if (tresEnRaya.ganaJugador1()) {
+                        if (tresEnRaya.ganaJugador2()) {
                             System.out.println("Ha ganado el robot!");
                             break;
                         }
@@ -91,11 +95,39 @@ public class UsoTresEnRaya {
                             break;
                         }
                     } while (tresEnRaya.quedanMovimientos() || !tresEnRaya.ganaJugador1() || !tresEnRaya.ganaJugador2());
+                    break;
+                case 3:
+                    tresEnRaya.iniciar();
+                    tresEnRaya.DibujaTablero();
+                    do {
+                        System.out.println("Tirada robótica: ");
+                        tresEnRaya.mueveOrdenador1();
+                        tresEnRaya.DibujaTablero();
+                        if (tresEnRaya.ganaJugador1()) {
+                            System.out.println("Ha ganado el robot 1!");
+                            break;
+                        }
+                        if (!tresEnRaya.quedanMovimientos()) {
+                            System.out.println("Ya no quedan movimientos. Queda en tablas la partida.");
+                            break;
+                        }
+                        tresEnRaya.mueveOrdenador2();
+                        tresEnRaya.DibujaTablero();
+                        if (tresEnRaya.ganaJugador2()) {
+                            System.out.println("Ha ganado el robot 2!");
+                            break;
+                        }
+                        if (!tresEnRaya.quedanMovimientos()) {
+                            System.out.println("Ya no quedan movimientos. Queda en tablas la partida.");
+                            break;
+                        }
+                    } while (tresEnRaya.quedanMovimientos() || !tresEnRaya.ganaJugador1() || !tresEnRaya.ganaJugador2());
+                case 4:
+                    break;
+                default:
+                    System.out.println("Opción no válida, inténtalo otra vez.");
             }
-
-
         }while (opcion!=4);
-
+        System.out.println("Has salido correctamente.");
     }
-
 }
