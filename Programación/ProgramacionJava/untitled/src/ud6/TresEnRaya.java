@@ -110,7 +110,7 @@ public class TresEnRaya {
 
     public boolean quedanMovimientos() {
         int ocupadas=0;
-        //Hacemos un bucle para recorrer todo el tablero y ver si están las casillas ocupadas.
+        //Hacemos un bucle para recorrer el tablero y ver si están las casillas ocupadas.
             for (int i = 0; i < 3; i++) {
                 for (int j = 0; j < 3; j++) {
                     if (tablero[i][j] != 0) {
