@@ -14,7 +14,6 @@ public class TresEnRaya {
         this.robot2 = 2;
         this.tablero = new int[3][3];
     }
-
     public void mueveJugador1 (int pos) {
         int contador = 1;
         for (int i = 0; i < 3; i++) {
@@ -35,7 +34,6 @@ public class TresEnRaya {
             }
         }
     }
-
     public boolean movimientoValido(int pos) {
         int contador = 1;
         for (int i = 0; i < 3; i++) {
@@ -82,7 +80,6 @@ public class TresEnRaya {
             }
         }
     }
-
     public void iniciar() {
         //Con esta funcion colocamos el valor de todas las casillas a 0.
         for (int i = 0; i < 3; i++) {
@@ -100,14 +97,12 @@ public class TresEnRaya {
             System.out.println("-------------");
         }
     }
-
     public char circuloOequis (int ficha) {
         //Con esta funcion devolvemos el caracter de la ficha
         if (ficha == 1) return 'X';
         if (ficha == 2) return 'O';
         return ' ';
     }
-
     public boolean quedanMovimientos() {
         int ocupadas=0;
         //Hacemos un bucle para recorrer el tablero y ver si están las casillas ocupadas.
@@ -121,45 +116,25 @@ public class TresEnRaya {
         //Devuelve true si hay menos de 9 fichas colocadas.
             return ocupadas < 9;
     }
-
     public boolean ganaJugador1() {
-
-        //Aqui comprobamos si gana el jugador1
+        //Aqui comprobamos si gana el jugador1 o el robot1
         for (int i = 0; i < 3; i++) {
-            if (tablero[i][0] == jugador1 && tablero[i][1] == jugador1 && tablero[i][2] == jugador1) return true;
-            if (tablero[0][i] == jugador1 && tablero[1][i] == jugador1 && tablero[2][i] == jugador1) return true;
+            if (tablero[i][0] == 1 && tablero[i][1] == 1 && tablero[i][2] == 1) return true;
+            if (tablero[0][i] == 1 && tablero[1][i] == 1 && tablero[2][i] == 1) return true;
         }
-        if (tablero[0][0] == jugador1 && tablero[1][1] == jugador1 && tablero[2][2] == jugador1) return true;
-        if (tablero[0][2] == jugador1 && tablero[1][1] == jugador1 && tablero[2][0] == jugador1) return true;
-        //Aqui comprobamos si gana el robot1
-        for (int i = 0; i < 3; i++) {
-            if (tablero[i][0] == robot1 && tablero[i][1] == robot1 && tablero[i][2] == robot1) return true;
-            if (tablero[0][i] == robot1 && tablero[1][i] == robot1 && tablero[2][i] == robot1) return true;
-        }
-        if (tablero[0][0] == robot1 && tablero[1][1] == robot1 && tablero[2][2] == robot1) return true;
-        if (tablero[0][2] == robot1 && tablero[1][1] == robot1 && tablero[2][0] == robot1) return true;
+        if (tablero[0][0] == 1 && tablero[1][1] == 1 && tablero[2][2] == 1) return true;
+        if (tablero[0][2] == 1 && tablero[1][1] == 1 && tablero[2][0] == 1) return true;
 
         return false;
     }
-
     public boolean ganaJugador2() {
-        //Aqui comprobamos si gana el jugador2
+        //Aqui comprobamos si gana el jugador2 o el robot2
         for (int i = 0; i < 3; i++) {
-            if (tablero[i][0] == jugador2 && tablero[i][1] == jugador2 && tablero[i][2] == jugador2) return true;
-            if (tablero[0][i] == jugador2 && tablero[1][i] == jugador2 && tablero[2][i] == jugador2) return true;
+            if (tablero[i][0] == 2 && tablero[i][1] == 2 && tablero[i][2] == 2) return true;
+            if (tablero[0][i] == 2 && tablero[1][i] == 2 && tablero[2][i] == 2) return true;
         }
-        if (tablero[0][0] == jugador2 && tablero[1][1] == jugador2 && tablero[2][2] == jugador2) return true;
-        if (tablero[0][2] == jugador2 && tablero[1][1] == jugador2 && tablero[2][0] == jugador2) return true;
-
-        //Aqui comprobamos si gana el robot2
-        for (int i = 0; i < 3; i++) {
-            if (tablero[i][0] == robot2 && tablero[i][1] == robot2 && tablero[i][2] == robot2) return true;
-            if (tablero[0][i] == robot2 && tablero[1][i] == robot2 && tablero[2][i] == robot2) return true;
-        }
-        if (tablero[0][0] == robot2 && tablero[1][1] == robot2 && tablero[2][2] == robot2) return true;
-        if (tablero[0][2] == robot2 && tablero[1][1] == robot2 && tablero[2][0] == robot2) return true;
-
+        if (tablero[0][0] == 2 && tablero[1][1] == 2 && tablero[2][2] == 2) return true;
+        if (tablero[0][2] == 2 && tablero[1][1] == 2 && tablero[2][0] == 2) return true;
         return false;
     }
-
 }

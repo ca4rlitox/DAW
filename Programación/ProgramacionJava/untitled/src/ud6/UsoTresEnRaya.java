@@ -1,11 +1,13 @@
 package ud6;
 
+import java.util.Random;
 import java.util.Scanner;
 
 public class UsoTresEnRaya {
     public static void main(String[] args) {
         TresEnRaya tresEnRaya = new TresEnRaya();
         Scanner entrada = new Scanner(System.in);
+        Random genAle = new Random();
         int opcion=0;
         int pos;
         String continuarPartidaRobotica;
@@ -59,12 +61,17 @@ public class UsoTresEnRaya {
                             System.out.println("Ya no quedan movimientos. Queda en tablas la partida.");
                             break;
                         }
-                    } while (tresEnRaya.quedanMovimientos() || !tresEnRaya.ganaJugador1() || !tresEnRaya.ganaJugador2());
+                    } while (tresEnRaya.quedanMovimientos() && !tresEnRaya.ganaJugador1() && !tresEnRaya.ganaJugador2());
                     break;
                 case 2:
                     tresEnRaya.iniciar();
-                    tresEnRaya.DibujaTablero();
+                    int numAle = genAle.nextInt(2) + 1;
+                    if (numAle == 1) {
+                        System.out.println("Empieza el robot. Tirada robótica: ");
+                        tresEnRaya.mueveOrdenador2();
+                    }
                     do {
+                        tresEnRaya.DibujaTablero();
                         System.out.println("Jugador 1, te toca mover: ");
                         pos = entrada.nextInt();
                         if (!tresEnRaya.movimientoValido(pos)) {
@@ -83,7 +90,7 @@ public class UsoTresEnRaya {
                             System.out.println("Ya no quedan movimientos. Queda en tablas la partida.");
                             break;
                         }
-                        System.out.println("Tirada robótica: ");
+                        System.out.println(" Tirada robótica: ");
                         tresEnRaya.mueveOrdenador2();
                         tresEnRaya.DibujaTablero();
                         if (tresEnRaya.ganaJugador2()) {
@@ -94,11 +101,10 @@ public class UsoTresEnRaya {
                             System.out.println("Ya no quedan movimientos. Queda en tablas la partida.");
                             break;
                         }
-                    } while (tresEnRaya.quedanMovimientos() || !tresEnRaya.ganaJugador1() || !tresEnRaya.ganaJugador2());
+                    } while (tresEnRaya.quedanMovimientos() && !tresEnRaya.ganaJugador1() && !tresEnRaya.ganaJugador2());
                     break;
                 case 3:
                     tresEnRaya.iniciar();
-                    tresEnRaya.DibujaTablero();
                     do {
                         System.out.println("Tirada robótica: ");
                         tresEnRaya.mueveOrdenador1();
@@ -114,14 +120,16 @@ public class UsoTresEnRaya {
                         tresEnRaya.mueveOrdenador2();
                         tresEnRaya.DibujaTablero();
                         if (tresEnRaya.ganaJugador2()) {
+                            tresEnRaya.DibujaTablero();
                             System.out.println("Ha ganado el robot 2!");
                             break;
                         }
                         if (!tresEnRaya.quedanMovimientos()) {
+                            tresEnRaya.DibujaTablero();
                             System.out.println("Ya no quedan movimientos. Queda en tablas la partida.");
                             break;
                         }
-                    } while (tresEnRaya.quedanMovimientos() || !tresEnRaya.ganaJugador1() || !tresEnRaya.ganaJugador2());
+                    } while (tresEnRaya.quedanMovimientos() && !tresEnRaya.ganaJugador1() && !tresEnRaya.ganaJugador2());
                 case 4:
                     break;
                 default:
