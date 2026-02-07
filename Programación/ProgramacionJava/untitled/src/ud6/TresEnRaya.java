@@ -5,7 +5,6 @@ import java.util.Random;
 public class TresEnRaya {
     private int jugador1,jugador2,robot1,robot2;
     private int[][] tablero;
-    private String fichas;
 
     public TresEnRaya() {
         this.jugador1 = 1;

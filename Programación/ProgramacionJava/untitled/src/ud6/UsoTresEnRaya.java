@@ -130,6 +130,7 @@ public class UsoTresEnRaya {
                             break;
                         }
                     } while (tresEnRaya.quedanMovimientos() && !tresEnRaya.ganaJugador1() && !tresEnRaya.ganaJugador2());
+                    break;
                 case 4:
                     break;
                 default:
