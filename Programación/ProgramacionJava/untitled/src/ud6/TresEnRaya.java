@@ -136,4 +136,7 @@ public class TresEnRaya {
         if (tablero[0][2] == 2 && tablero[1][1] == 2 && tablero[2][0] == 2) return true;
         return false;
     }
+    public String toString(){
+        return "Tres en raya";
+    }
 }
