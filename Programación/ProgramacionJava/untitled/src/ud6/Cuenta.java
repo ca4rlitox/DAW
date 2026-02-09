@@ -3,6 +3,7 @@ package ud6;
 public class Cuenta {
     private String numCuenta;
     private  double saldo;
+
     public Cuenta(String numCuenta) {
         this.numCuenta = numCuenta;
         this.saldo = 0;
