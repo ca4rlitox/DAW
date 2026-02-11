@@ -89,10 +89,13 @@ public class TresEnRaya {
     }
     public void DibujaTablero() {
 
+        //Añadimos los caracteres char X y O
+        char equis = 'X';
+        char circulo = 'O';
         //Con un bucle dibujamos el tablero
         System.out.println("-------------");
         for (int i = 0; i < 3; i++) {
-            System.out.print("| " +circuloOequis(tablero[i][0])+ " | "+circuloOequis(tablero[i][1])+" | "+circuloOequis(tablero[i][2])+" | \n");
+            System.out.print("| " +circuloOequis(tablero[i][0])+" | "+circuloOequis(tablero[i][1])+" | "+circuloOequis(tablero[i][2])+" | \n");
             System.out.println("-------------");
         }
     }
@@ -104,7 +107,7 @@ public class TresEnRaya {
     }
     public boolean quedanMovimientos() {
         int ocupadas=0;
-        //Hacemos un bucle para recorrer el tablero y ver si están las casillas ocupadas.
+        //Hacemos un bucle para recorrer el tablero y contar las casillas ocupadas
             for (int i = 0; i < 3; i++) {
                 for (int j = 0; j < 3; j++) {
                     if (tablero[i][j] != 0) {
@@ -116,22 +119,24 @@ public class TresEnRaya {
             return ocupadas < 9;
     }
     public boolean ganaJugador1() {
-        //Aqui comprobamos si gana el jugador1 o el robot1
+        //Aqui comprobamos si gana el 2 en las lineas verticales y horizontales
         for (int i = 0; i < 3; i++) {
             if (tablero[i][0] == 1 && tablero[i][1] == 1 && tablero[i][2] == 1) return true;
             if (tablero[0][i] == 1 && tablero[1][i] == 1 && tablero[2][i] == 1) return true;
         }
+        //Aqui comprobamos si gana el 1 en las diagonales
         if (tablero[0][0] == 1 && tablero[1][1] == 1 && tablero[2][2] == 1) return true;
         if (tablero[0][2] == 1 && tablero[1][1] == 1 && tablero[2][0] == 1) return true;
 
         return false;
     }
     public boolean ganaJugador2() {
-        //Aqui comprobamos si gana el jugador2 o el robot2
+        //Aqui comprobamos si gana el 1 en las lineas verticales y horizontales
         for (int i = 0; i < 3; i++) {
             if (tablero[i][0] == 2 && tablero[i][1] == 2 && tablero[i][2] == 2) return true;
             if (tablero[0][i] == 2 && tablero[1][i] == 2 && tablero[2][i] == 2) return true;
         }
+        //Aqui comprobamos si gana el 2 en las diagonales
         if (tablero[0][0] == 2 && tablero[1][1] == 2 && tablero[2][2] == 2) return true;
         if (tablero[0][2] == 2 && tablero[1][1] == 2 && tablero[2][0] == 2) return true;
         return false;
