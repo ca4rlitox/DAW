@@ -1,11 +1,21 @@
 package ud6;
 
+import java.util.Scanner;
+
 public class PruebaFraccion {
     public static void main(String[] args) {
-    Fraccion f1 = new Fraccion(16,16);
-    Fraccion f2 = new Fraccion(17,16);
+        Scanner entrada = new Scanner(System.in);
 
-        System.out.println(f2.restaFraccion(f1));
+        System.out.println("Introduce numerador y denominador de f1:");
+        Fraccion f1 = new Fraccion(entrada.nextInt(),entrada.nextInt());
+
+        System.out.println("Introduce numerador y denominador de f2:");
+        Fraccion f2 = new Fraccion(entrada.nextInt(),entrada.nextInt());
+
+        System.out.println(f1+"+"+f2+"="+f2.sumaFraccion(f1));
+
+
+
 
 
     }

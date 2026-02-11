@@ -21,17 +21,19 @@ public class Fraccion {
         this.denominador = denominador;
     }
 
-    public String sumaFraccion(Fraccion f2) {
-        if (f2.getDenominador() != denominador) {
-            return null;.0.................++++++0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+    public Fraccion sumaFraccion(Fraccion f2) {
+
+        if (f2.getDenominador() == denominador) {
+            return new Fraccion(f2.getNumerador()+numerador,denominador);
         }
-            int n = f2.getNumerador() + numerador;
-            int d = f2.getDenominador();
-            Fraccion rdso=new Fraccion(n,d);
-        return rdso.toString();
+
+        int d = ((f2.getNumerador()*denominador) + (f2.getDenominador()*numerador));
+        int n = (denominador*f2.getDenominador());
+        Fraccion rdso=new Fraccion(d,n);
+        return rdso;
     }
 
-    public String restaFraccion(Fraccion f2) {
+    public Fraccion restaFraccion(Fraccion f2) {
         if (f2.getDenominador() != denominador) {
             return null;
         }
@@ -39,21 +41,21 @@ public class Fraccion {
             int n = f2.getNumerador() - numerador;
             int d = f2.getDenominador();
             Fraccion rdso=new Fraccion(n,d);
-        return rdso.toString();
+        return rdso;
     }
 
-    public String multiplicaFraccion(Fraccion f2) {
+    public Fraccion multiplicaFraccion(Fraccion f2) {
         int n = f2.getNumerador() * numerador;
         int d = f2.getDenominador() * denominador;
         Fraccion rdso=new Fraccion(n,d);
-        return rdso.toString();
+        return rdso;
     }
 
-    public String divideFraccion(Fraccion f2) {
-        int n = f2.getNumerador() / denominador;
-        int d = f2.getDenominador() / numerador;
+    public Fraccion divideFraccion(Fraccion f2) {
+        int n = denominador * f2.getNumerador();
+        int d = numerador * f2.getDenominador();
         Fraccion rdso=new Fraccion(n,d);
-        return rdso.toString();
+        return rdso;
     }
 
     public String toString() {
