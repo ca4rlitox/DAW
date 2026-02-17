@@ -6,7 +6,7 @@ public class PersonaldeServicio extends Empleados {
         super(nombre, apellidos, dni, estadoCivil, fechaIncorporacion, numDespacho);
         this.seccion = nombre;
     }
-    public  String getSeccion() {
+    public String getSeccion() {
         return seccion;
     }
     public void setSeccion(String seccion) {
