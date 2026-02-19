@@ -20,7 +20,7 @@ public class PruebaLibros {
             System.out.println("4. Ver todos los libros");
             System.out.println("5. Salir");
             opcion = entrada.nextInt();
-            entrada.nextInt();
+            entrada.nextLine();
             switch (opcion) {
                 case 1:
                     System.out.println("Dar alta libro.");

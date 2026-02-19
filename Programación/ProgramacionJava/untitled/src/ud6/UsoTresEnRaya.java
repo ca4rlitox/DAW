@@ -90,7 +90,7 @@ public class UsoTresEnRaya {
                             System.out.println("Ya no quedan movimientos. Queda en tablas la partida.");
                             break;
                         }
-                        System.out.println(" Tirada robótica: ");
+                        System.out.println("Tirada robótica: ");
                         tresEnRaya.mueveOrdenador2();
                         tresEnRaya.DibujaTablero();
                         if (tresEnRaya.ganaJugador2()) {
@@ -106,6 +106,8 @@ public class UsoTresEnRaya {
                 case 3:
                     tresEnRaya.iniciar();
                     do {
+                        System.out.println("Introduce cualquier caracter/palabra para continuar:");
+                        continuarPartidaRobotica = entrada.nextLine();
                         System.out.println("Tirada robótica: ");
                         tresEnRaya.mueveOrdenador1();
                         tresEnRaya.DibujaTablero();
@@ -117,6 +119,8 @@ public class UsoTresEnRaya {
                             System.out.println("Ya no quedan movimientos. Queda en tablas la partida.");
                             break;
                         }
+                        System.out.println("Introduce cualquier caracter/palabra para continuar:");
+                        continuarPartidaRobotica = entrada.nextLine();
                         tresEnRaya.mueveOrdenador2();
                         tresEnRaya.DibujaTablero();
                         if (tresEnRaya.ganaJugador2()) {

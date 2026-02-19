@@ -10,7 +10,7 @@ public class Libro {
         this.titulo = titulo;
         this.autor = autor;
         this.numPags = numPags;
-        this.calificacion = calificacion;
+        setCalificacion(calificacion);
     }
     public Libro() {
         this.titulo = "";
@@ -41,7 +41,12 @@ public class Libro {
         return calificacion;
     }
     public void setCalificacion(int calificacion) {
-        this.calificacion = calificacion;
+        if (calificacion >= 0 && calificacion <= 10) {
+            this.calificacion = calificacion;
+        }
+        else {
+            this.calificacion = 0;
+        }
     }
     public String toString() {
         return "Autor: "+autor+" Libro: "+titulo+" Calificacion: "+calificacion+" NumPags: "+numPags;

@@ -15,6 +15,9 @@ public class ConjuntoLibros {
         if (espacioOcupado==TAM) {
             return false;
         }
+        if (existeLibro(libro)) {
+            return false;
+        }
         conjuntoDeLibros[espacioOcupado] = libro;
         espacioOcupado++;
         return true;
@@ -36,20 +39,29 @@ public class ConjuntoLibros {
         return false;
     }
 
+    public boolean existeLibro(Libro l) {
+        for (int i = 0; i < espacioOcupado; i++) {
+            if (conjuntoDeLibros[i].getTitulo().equals(l.getTitulo())) {
+                return true;
+            }
+        }
+        return false;
+    }
+
     public void mayorCalificacion () {
         int mayor=0;
         int menor=10;
-        Libro mayorCali = null;
-        Libro menorCali = null;
+        String mayorCali ="";
+        String menorCali ="";
         for (int i = 0; i < espacioOcupado; i++) {
             if (conjuntoDeLibros[i].getCalificacion() > mayor) {
-                mayorCali =  conjuntoDeLibros[i];
-                mayor= conjuntoDeLibros[i].getCalificacion();
+                mayorCali =  conjuntoDeLibros[i].getTitulo();
+                mayor = conjuntoDeLibros[i].getCalificacion();
             }
         }
         for (int i = 0; i < espacioOcupado; i++) {
             if (conjuntoDeLibros[i].getCalificacion() < menor) {
-                menorCali =  conjuntoDeLibros[i];
+                menorCali =  conjuntoDeLibros[i].getTitulo();
                 menor = conjuntoDeLibros[i].getCalificacion();
             }
         }

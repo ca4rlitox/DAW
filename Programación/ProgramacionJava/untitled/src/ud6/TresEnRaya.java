@@ -7,10 +7,6 @@ public class TresEnRaya {
     private int[][] tablero;
 
     public TresEnRaya() {
-        this.jugador1 = 1;
-        this.jugador2 = 2;
-        this.robot1 = 1;
-        this.robot2 = 2;
         this.tablero = new int[3][3];
     }
     public void mueveJugador1 (int pos) {
@@ -18,7 +14,7 @@ public class TresEnRaya {
         for (int i = 0; i < 3; i++) {
             for (int j = 0; j < 3; j++, contador++) {
                 if (pos == contador) {
-                    tablero[i][j] = jugador1;
+                    tablero[i][j] = 1;
                 }
             }
         }
@@ -28,7 +24,7 @@ public class TresEnRaya {
         for (int i = 0; i < 3; i++) {
             for (int j = 0; j < 3; j++, contador++) {
                 if (pos == contador) {
-                    tablero[i][j] = jugador2;
+                    tablero[i][j] = 2;
                 }
             }
         }
@@ -55,7 +51,7 @@ public class TresEnRaya {
         for (int i = 0; i < 3; i++) {
             for (int j = 0; j < 3; j++,contador++) {
                 if (pos == contador) {
-                    tablero[i][j] = robot1;
+                    tablero[i][j] = 1;
                 }
             }
         }
@@ -74,7 +70,7 @@ public class TresEnRaya {
         for (int i = 0; i < 3; i++) {
             for (int j = 0; j < 3; j++,contador++) {
                 if (pos == contador) {
-                    tablero[i][j] = robot2;
+                    tablero[i][j] = 2;
                 }
             }
         }
@@ -88,18 +84,13 @@ public class TresEnRaya {
         }
     }
     public void DibujaTablero() {
-
-        //Añadimos los caracteres char X y O
-        char equis = 'X';
-        char circulo = 'O';
-        //Con un bucle dibujamos el tablero
         System.out.println("-------------");
         for (int i = 0; i < 3; i++) {
             System.out.print("| " +circuloOequis(tablero[i][0])+" | "+circuloOequis(tablero[i][1])+" | "+circuloOequis(tablero[i][2])+" | \n");
             System.out.println("-------------");
         }
     }
-    public char circuloOequis (int ficha) {
+    private char circuloOequis (int ficha) {
         //Con esta funcion devolvemos el caracter de la ficha
         if (ficha == 1) return 'X';
         if (ficha == 2) return 'O';
@@ -142,6 +133,7 @@ public class TresEnRaya {
         return false;
     }
     public String toString(){
-        return "Tres en raya";
+        return "";
     }
+
 }
