@@ -12,6 +12,12 @@ public class Estudiantes extends Persona {
     public void setCurso(String curso) {
         this.curso = curso;
     }
+    public void estoyAtendiendo(){
+        System.out.println("Estoy de atendiendo");
+    }
+    public void estoyHablando() {
+        System.out.println("Estoy hablando");
+    }
     public String toString() {
         return super.toString()+" curso: "+curso;
     }

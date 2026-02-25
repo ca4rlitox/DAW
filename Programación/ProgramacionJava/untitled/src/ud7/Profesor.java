@@ -13,6 +13,9 @@ public class Profesor extends Empleados {
     public void setDepartamento(String departamento) {
         this.departamento = departamento;
     }
+    public void estoyExplicando() {
+        System.out.println("Estoy explicando");
+    }
     public String toString() {
         return super.toString()+" departamento: "+departamento;
     }
