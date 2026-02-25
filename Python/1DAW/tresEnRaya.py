@@ -58,7 +58,3 @@ def main():
 
 
 main()
-
-# Clientes = {"Potamo, Pepe":4, "Morales, José María":55, "Rosales, Ines":20}
-# Ordenar por nombre de pila y con apellido:
-# Ej: Ines Rosales (20)
