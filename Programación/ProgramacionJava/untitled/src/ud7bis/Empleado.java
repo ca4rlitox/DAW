@@ -1,16 +1,17 @@
 package ud7bis;
 
 public class Empleado {
-    private String nombre;
-    private String apellido;
-    private int numSS;
-    private double salario;
+    private String nombre,apellido,numSS;
+    private double salarioBase;
 
-    public Empleado(String nombre, String apellido, int numSS, double salario) {
+    public Empleado(String nombre, String apellido, String numSS, double salarioBase) {
         this.nombre = nombre;
         this.apellido = apellido;
         this.numSS = numSS;
-        this.salario = salario;
+        this.salarioBase = salarioBase;
+    }
+    public String getNumSS() {
+        return numSS;
     }
     public String getNombre() {
         return nombre;
@@ -24,20 +25,14 @@ public class Empleado {
     public void setApellido(String apellido) {
         this.apellido = apellido;
     }
-    public int getNumSS() {
-        return numSS;
+    public double getSalarioBase() {
+        return salarioBase;
     }
-    public void setNumSS(int numSS) {
-        this.numSS = numSS;
-    }
-    public double getSalario() {
-        return salario;
-    }
-    public void setSalario(double salario) {
-        this.salario = salario;
+    public void setSalarioBase(double salarioBase) {
+        this.salarioBase = salarioBase;
     }
 
     public String toString() {
-        return "Nombre: "+nombre+" apellido: "+apellido+" num seguridad social: "+numSS+" salario: "+salario;
+        return "Nombre: "+nombre+" apellido: "+apellido+" num seguridad social: "+numSS+" salario: "+ salarioBase;
     }
 }

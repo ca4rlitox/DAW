@@ -1,10 +1,10 @@
 package ud7bis;
 
-public class EmpleadoPorComision extends Empleado{
+public class EmpleadoBaseMasComision extends Empleado {
     private int ventas;
     private double comision;
 
-    public EmpleadoPorComision(String nombre, String apellido, String numSS, int ventas,  double comision) {
+    public EmpleadoBaseMasComision(String nombre, String apellido, String numSS, int ventas,  double comision) {
         super(nombre, apellido, numSS, 0);
         this.ventas = ventas;
         this.comision = comision;
@@ -22,7 +22,8 @@ public class EmpleadoPorComision extends Empleado{
     public void setComision(double comision) {
         this.comision = comision;
     }
-    public double calcularSalarioBase() {
-        return ventas*comision;
+    public double  calcularSalario() {
+        return this.getSalarioBase()+(ventas * comision);
     }
+
 }
