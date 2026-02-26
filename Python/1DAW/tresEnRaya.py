@@ -1,10 +1,14 @@
 tablero = [0,0,0,0,0,0,0,0,0]
 
 def verTablero():
+
     print("|-----------|")
-    for i in range(0,3):
-        print("|",circuloOequis(tablero[i]),"|",circuloOequis(tablero[i + 3]),"|",circuloOequis(tablero[i + 6]),"|")
-        print("|-----------|")
+    print("|",circuloOequis(tablero[0]),"|",circuloOequis(tablero[1]),"|",circuloOequis(tablero[2]),"|")
+    print("|-----------|")
+    print("|",circuloOequis(tablero[3]),"|",circuloOequis(tablero[4]),"|",circuloOequis(tablero[5]),"|")
+    print("|-----------|")
+    print("|",circuloOequis(tablero[6]),"|",circuloOequis(tablero[7]),"|",circuloOequis(tablero[8]),"|")
+    print("|-----------|")
 
 def movimientoValido(pos):
     if pos >= 9 or pos < 0 or tablero[pos] != 0:
@@ -35,6 +39,13 @@ def juegaJugador2():
             ficha = int(input("Ficha introducida erronea. Intentalo otra vez."))
     tablero[ficha] = 2
     verTablero()
+
+def ganaJugador1():
+    if tablero[0] and tablero [4] and tablero[8]:
+        return True
+    if tablero[2] and tablero[4] and tablero[6]:
+        return True
+    return False
 
 def quedanMovimientos():
     k=0
