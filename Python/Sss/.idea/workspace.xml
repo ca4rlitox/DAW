@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="52c683b8-3240-4cf9-8951-9a680b833967" name="Changes" comment="ejercicio para casa" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;ca4rlitox&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/ca4rlitox/DAW.git&quot;,
+    &quot;accountId&quot;: &quot;d39c7acd-0a1e-493d-9c63-d7b531259d8f&quot;
+  }
+}</component>
+  <component name="McpProjectServerCommands">
+    <commands />
+    <urls />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;customColor&quot;: &quot;&quot;,
+  &quot;associatedIndex&quot;: 0
+}</component>
+  <component name="ProjectId" id="39CP73izfWetFASqaRZ3Qha4d6M" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Python.Apuntes_diccionario.executor": "Run",
+    "Python.boletin21Ej1.executor": "Run",
+    "Python.boletin21Ej2.executor": "Debug",
+    "Python.boletin22.executor": "Run",
+    "Python.ejercicioExcepciones.executor": "Run",
+    "Python.fechasYhoras.executor": "Run",
+    "Python.fstrings.executor": "Run",
+    "Python.tresEnRaya.executor": "Run",
+    "RunOnceActivity.MCP Project settings loaded": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
+    "ai.playground.ignore.import.keys.banner.in.settings": "true",
+    "git-widget-placeholder": "main",
+    "last_opened_file_path": "/home/alumno/Documentos/DAW/Python/1DAW",
+    "node.js.detected.package.eslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "preferences.lookFeel"
+  }
+}]]></component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-js-predefined-d6986cc7102b-9b0f141eb926-JavaScript-PY-253.30387.173" />
+        <option value="bundled-python-sdk-4762d8aabb82-6d6dccd035ac-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-253.30387.173" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="52c683b8-3240-4cf9-8951-9a680b833967" name="Changes" comment="" />
+      <created>1770196911528</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1770196911528</updated>
+      <workItem from="1771505764517" duration="1358000" />
+      <workItem from="1772011236583" duration="3045000" />
+      <workItem from="1772091486635" duration="76000" />
+    </task>
+    <task id="LOCAL-00001" summary="fecha y hora">
+      <option name="closed" value="true" />
+      <created>1770199715174</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1770199715175</updated>
+    </task>
+    <task id="LOCAL-00002" summary="fecha y hora ejercicios 1 y 2 para hacer">
+      <option name="closed" value="true" />
+      <created>1770297199066</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1770297199066</updated>
+    </task>
+    <task id="LOCAL-00003" summary="fstrings y java">
+      <option name="closed" value="true" />
+      <created>1770804597742</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1770804597742</updated>
+    </task>
+    <task id="LOCAL-00004" summary="hacer ejercicio fife">
+      <option name="closed" value="true" />
+      <created>1770902316898</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1770902316898</updated>
+    </task>
+    <task id="LOCAL-00005" summary="ejercicio para casa">
+      <option name="closed" value="true" />
+      <created>1772014234680</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1772014234680</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="fecha y hora" />
+    <MESSAGE value="fecha y hora ejercicios 1 y 2 para hacer" />
+    <MESSAGE value="fstrings y java" />
+    <MESSAGE value="hacer ejercicio fife" />
+    <MESSAGE value="ejercicio para casa" />
+    <option name="LAST_COMMIT_MESSAGE" value="ejercicio para casa" />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/Sss$tresEnRaya.coverage" NAME="tresEnRaya Coverage Results" MODIFIED="1772013348003" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Sss$Apuntes_diccionario.coverage" NAME="Apuntes_diccionario Coverage Results" MODIFIED="1771507067105" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+  </component>
+</project>
