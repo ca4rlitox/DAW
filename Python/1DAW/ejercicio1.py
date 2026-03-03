@@ -10,40 +10,33 @@ def inicializaJuego(jugadores,numJugadores):
         jugadores[i] = "Vivo"
 
 def eliminarJugadores(jugadores, numEliminados):
-    if numEliminados >= verJugadoresActivos1(jugadores):
-        print(f"¡No puedo eliminar a {numEliminados} jugadores! Ahora mismo quedan {numJugadores} activos. ¡Nos quedamos sin ganador!")
+    if numEliminados >= verJugadoresActivos(jugadores):
+        print(f"¡No puedo eliminar a {numEliminados} jugadores! Ahora mismo quedan {verJugadoresActivos(jugadores)} activos. ¡Nos quedamos sin ganador!")
     else:
         for i in range(0,numEliminados):
             verificar = False
-            afortunado=random.randint(0,455)
+            afortunado=random.randint(0,len(jugadores))
             if jugadores[afortunado] == "---":
                 while jugadores[afortunado] == "---":
-                    afortunado=random.randint(0,455)
+                    afortunado=random.randint(0,len(jugadores))
             jugadores[afortunado] = "---"
             verificar = True
 
         print(f"Vamos a eliminar a {numEliminados} jugadores.")
-        print(f"Quedan {verJugadoresActivos1(jugadores)} jugadores activos.")
+        print(f"Quedan {verJugadoresActivos(jugadores)} jugadores activos.")
 
-    if verJugadoresActivos1(jugadores) == 1:
+    if verJugadoresActivos(jugadores) == 1:
         print("Queda solo un jugador activo. Ya tenemos ganador!")
-
-def verJugadoresActivos1(jugadores):
-    contador=0
-    for i in range(0,numJugadores):
-        if jugadores[i] != "---":
-            contador+=1
-    return contador
 
 def verJugadoresActivos(jugadores):
     contador=0
     for i in range(0,numJugadores):
         if jugadores[i] != "---":
             contador+=1
-    print(f"Quedan {contador} jugadores activos!")
+    return contador
 
-inicializaJuego(jugadores,numJugadores)
+inicializaJuego(jugadores,5000)
 eliminarJugadores(jugadores,555)
-activos = verJugadoresActivos1(jugadores)
+activos = verJugadoresActivos(jugadores)
 print("Jugadores activos:",activos)
 
