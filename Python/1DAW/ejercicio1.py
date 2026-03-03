@@ -43,7 +43,7 @@ def verJugadoresActivos(jugadores):
     print(f"Quedan {contador} jugadores activos!")
 
 inicializaJuego(jugadores,numJugadores)
-eliminarJugadores(jugadores,5)
+eliminarJugadores(jugadores,555)
 activos = verJugadoresActivos1(jugadores)
 print("Jugadores activos:",activos)
 
