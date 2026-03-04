@@ -1,7 +1,7 @@
 import random
 
 jugadores = {}
-numJugadores = 456
+numJugadores = 457
 columnas = 12
 #El array tiene que empezar en la posicion 1
 
@@ -10,17 +10,17 @@ def inicializaJuego(jugadores,numJugadores):
         jugadores[i] = "Vivo"
 
 def eliminarJugadores(jugadores, numEliminados):
+    numJugadores = len(jugadores)
     if numEliminados >= verJugadoresActivos(jugadores):
-        print(f"¡No puedo eliminar a {numEliminados} jugadores! Ahora mismo quedan {verJugadoresActivos(jugadores)} activos. ¡Nos quedamos sin ganador!")
+        print(f"¡No puedo eliminar a {numEliminados} jugadores! Ahora mismo quedan {numJugadores} activos. ¡Nos quedamos sin ganador!")
     else:
         for i in range(0,numEliminados):
-            verificar = False
-            afortunado=random.randint(0,len(jugadores))
+            afortunado=random.randint(0,numJugadores)
             if jugadores[afortunado] == "---":
                 while jugadores[afortunado] == "---":
-                    afortunado=random.randint(0,len(jugadores))
+                    afortunado=random.randint(0,numJugadores)
             jugadores[afortunado] = "---"
-            verificar = True
+
 
         print(f"Vamos a eliminar a {numEliminados} jugadores.")
         print(f"Quedan {verJugadoresActivos(jugadores)} jugadores activos.")
@@ -34,9 +34,19 @@ def verJugadoresActivos(jugadores):
         if jugadores[i] != "---":
             contador+=1
     return contador
+def verJugadores(jugadores, columnas):
+    num = len(jugadores)
+    for i in range(1,num):
+        if jugadores[i] != "---":
+            print(f"|{i}",end="")
+        else:
+            print("|---|", end ="")
+        if i%columnas == 0:
+            print("|")
 
-inicializaJuego(jugadores,5000)
-eliminarJugadores(jugadores,555)
+inicializaJuego(jugadores,numJugadores)
+eliminarJugadores(jugadores,353)
+verJugadores(jugadores,12)
 activos = verJugadoresActivos(jugadores)
 print("Jugadores activos:",activos)
 
