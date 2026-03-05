@@ -11,10 +11,8 @@ public class ConjuntoLibros {
 
     public boolean addLibro (Libro l) {
         for (int i = 0; i < productos.size(); i++) {
-            if (productos.get(i).getTitulo().equals(l.getTitulo())) {
-                return false;
-            }
-            if (productos.get(i).getAutor().equals(l.getAutor())) {
+            if (productos.get(i).getTitulo().equalsIgnoreCase(l.getTitulo()) && productos.get(i).getAutor().equalsIgnoreCase(l.getAutor())) {
+                System.out.println("El libro ya existe. No se ha añadido.");
                 return false;
             }
         }
@@ -22,6 +20,10 @@ public class ConjuntoLibros {
         return true;
     }
     public boolean eliminarLibro(String tituloOautor) {
+        if (productos.isEmpty()) {
+            System.out.println("No hay libros que eliminar.");
+            return false;
+        }
         for (int i = 0; i < productos.size(); i++) {
             if (productos.get(i).getTitulo().equals(tituloOautor)) {
                 productos.remove(i);
@@ -51,6 +53,7 @@ public class ConjuntoLibros {
     public void menorCalificacion() {
         int menor=10;
         Libro libroConMenorCalificacion=null;
+
         for (int i = 0; i < productos.size(); i++) {
             if (productos.get(i).getCalificacion() < menor) {
                 menor = productos.get(i).getCalificacion();
