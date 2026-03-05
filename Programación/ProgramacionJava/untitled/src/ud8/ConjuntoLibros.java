@@ -42,7 +42,7 @@ public class ConjuntoLibros {
         Libro libroConMayorCalificacion=null;
         for (int i = 0; i < productos.size(); i++) {
             if (productos.get(i).getCalificacion() > mayor) {
-                mayor = productos.get(i).getCalificacion();
+                mayor = productos.get(i).getCalificacion(); 
                 libroConMayorCalificacion = productos.get(i);
             }
         }
