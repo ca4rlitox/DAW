@@ -2,10 +2,11 @@ package ud8;
 
 public class Lavadora extends Electrodomestico {
     private double carga;
-    finaprivate int CARGA_FINAL =
+    final private int CARGA_FINAL=5;
+
     public Lavadora() {
         super();
-        carga=5;
+        carga=CARGA_FINAL;
     }
     public Lavadora(double precio, double peso) {
         super(precio, peso);
@@ -19,6 +20,10 @@ public class Lavadora extends Electrodomestico {
     }
     public double precioFinal() {
         if (carga >= 30) return super.precioFinal()+50;
-        return super.precioFinal()+50;
-        }
+        return super.precioFinal();
+    }
+    public String toString() {
+        return super.toString()+" carga: "+carga+" precio final lavadora: "+this.precioFinal();
+    }
+
 }

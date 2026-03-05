@@ -91,4 +91,9 @@ public class Electrodomestico {
 
         return precioFinal;
     }
+
+    public String toString() {
+        return "Color: "+this.color+" consumo energético: "+this.consumoEnergetico+" precio base: "+this.precioBase+
+                "€ peso: "+this.peso+"kg";
+    }
 }
