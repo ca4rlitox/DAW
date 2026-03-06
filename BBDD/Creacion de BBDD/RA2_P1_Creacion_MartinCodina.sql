@@ -55,3 +55,6 @@ ALTER TABLE imparten
 	ADD CONSTRAINT fk_id_asignatura_imparten FOREIGN KEY(id_asignatura)
 		REFERENCES asignaturas(id_asignatura)
         ON DELETE RESTRICT ON UPDATE CASCADE;
+        
+        
+        
