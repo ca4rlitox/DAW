@@ -42,8 +42,8 @@ def ataque(personaje1,personaje2):
     if personaje1 == personaje2:
         print(f"{personaje1[0]} no puede combatir contra si mismo.")
     else:
-        ataque = int((int(personaje1[3]/2)) - int(personaje1[5]))
-        personaje2[5] = ataque
+        ataque = personaje1[5]/2
+        personaje2[5] = personaje2[5] - ataque
         return personaje2
 
 personaje1= construyePersonaje(nombres,adjetivos,clases,razas)

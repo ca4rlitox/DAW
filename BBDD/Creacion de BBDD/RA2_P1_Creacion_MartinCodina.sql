@@ -3,9 +3,9 @@ CREATE DATABASE gestion_universidad;
 USE gestion_universidad;
 
 CREATE TABLE facultades(
-	id_facultad SMALLINT UNSIGNED AUTO_INCREMENT NOT NULL,
-    codigo CHAR(4) UNIQUE NOT NULL,
-    nombre VARCHAR(30) UNIQUE NOT NULL,
+	id_facultad SMALLINT UNSIGNED AUTO_INCREMENT NOT NULL UNIQUE,
+    codigo CHAR(4) UNIQUE NOT NULL UNIQUE,
+    nombre VARCHAR(30) UNIQUE NOT NULL UNIQUE,
     id_decano SMALLINT UNSIGNED,
     CONSTRAINT pk_id_facultad PRIMARY KEY (id_facultad)
 );
@@ -27,17 +27,17 @@ ALTER TABLE facultades
 		REFERENCES profesores(id_profesor);
         
 CREATE TABLE grados(
-	id_grado SMALLINT UNSIGNED auto_increment NOT NULL,
-    nombre VARCHAR(32) NOT NULL,
+	id_grado SMALLINT UNSIGNED auto_increment NOT NULL UNIQUE,
+    nombre VARCHAR(32) NOT NULL UNIQUE,
     id_facultad SMALLINT UNSIGNED NOT NULL,
     CONSTRAINT pk_id_grado PRIMARY KEY(id_grado),
     CONSTRAINT fk_id_facultado FOREIGN KEY(id_facultad)
     REFERENCES facultades(id_facultad));
     
 CREATE TABLE asignaturas(
-	id_asignatura SMALLINT UNSIGNED auto_increment NOT NULL,
-    codigo_asig VARCHAR(10) UNIQUE NOT NULL,
-    nombre VARCHAR(32) NOT NULL,
+	id_asignatura SMALLINT UNSIGNED auto_increment NOT NULL UNIQUE,
+    codigo_asig VARCHAR(10) UNIQUE NOT NULL UNIQUE,
+    nombre VARCHAR(32) NOT NULL UNIQUE,
     creditos TINYINT DEFAULT 6,
     CONSTRAINT pk_id_asignaturas PRIMARY KEY(id_asignatura),
     CONSTRAINT chk_creditos CHECK (creditos >= 3)
@@ -51,10 +51,28 @@ CREATE TABLE imparten(
 ALTER TABLE imparten
     ADD CONSTRAINT fk_id_profesor_imparten FOREIGN KEY(id_profesor)
 		REFERENCES profesores(id_profesor)
-        ON DELETE RESTRICT ON UPDATE CASCADE,
+        ON DELETE CASCADE ON UPDATE CASCADE,
 	ADD CONSTRAINT fk_id_asignatura_imparten FOREIGN KEY(id_asignatura)
 		REFERENCES asignaturas(id_asignatura)
-        ON DELETE RESTRICT ON UPDATE CASCADE;
-        
+        ON DELETE CASCADE ON UPDATE CASCADE;
+
+
+INSERT INTO `gestion_universidad`.`facultades`
+(`id_facultad`,
+`codigo`,
+`nombre`,
+`id_decano`)
+VALUES
+(1,1,'morosi',1);
+
+INSERT INTO `gestion_universidad`.`profesores`
+(`id_profesor`,
+`NIF`,
+`nombre_completo`,
+`salario`,
+`id_facultad`)
+VALUES
+(1,'51180393B','MORO SANCHEZ',2500,1)
+
         
         
