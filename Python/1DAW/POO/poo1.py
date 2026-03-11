@@ -1,12 +1,18 @@
 
 # Las clases se definen con la primera en mayúscula y en singular
 class Alumno:
+    #Atributos estáticos
+    numAlumno = 0
     # Constructor
     #self es como el this de java
     def __init__(self, nombre, edad, marica):
         self.__nombre = nombre
         self.__edad = edad
         self.__marica = marica
+        Alumno.numAlumno+=1
+        # public: edad
+        # protected: _edad (dentro de la clase, es por convención, no vale para mucho)
+        # private: __private (dentro de la clase)
 
     ## Para ver datos
     def verDatos(self):
@@ -20,17 +26,18 @@ class Alumno:
     @property #para un getter se pone esto
     def edad(self):
         return self.__edad
-    @edad.setter #para un setter
+    @edad.setter #para un setter Y SE USA COMO SI FUERA EL ATRIBUTO, nom_atributo.edad
     def edad(self,ed):
         self.__edad = ed
+    @classmethod
+    def matriculados(cls):
+        return cls.numAlumno
+    @staticmethod
+    def matriculados2():
+        return Alumno.numAlumno
 
 trista=Alumno("Leandro Trista", 33, "no")
 carlos=Alumno("Carlos Martin",21,"si")
 
-trista.edad = 55
+print(Alumno.matriculados())
 
-print(trista.edad)
-#public: edad
-#protected: _edad (dentro de la clase)
-#private: __private (dentro de la clase)
-print(carlos.edad)
