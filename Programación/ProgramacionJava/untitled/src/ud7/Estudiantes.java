@@ -2,8 +2,8 @@ package ud7;
 
 public class Estudiantes extends Persona {
     private String curso;
-    public Estudiantes (String nombre, String apellidos, String dni, String estadoCivil, String curso) {
-        super(nombre,apellidos,dni,estadoCivil);
+    public Estudiantes (String nombre, String apellidos, String estadoCivil, String curso) {
+        super(nombre,apellidos,estadoCivil);
         this.curso = curso;
     }
     public String getCurso() {

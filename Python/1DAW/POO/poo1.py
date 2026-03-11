@@ -17,14 +17,19 @@ class Alumno:
     # def getEdad(self):
     #    return self.__edad
     #metodo de python
-    @property
+    @property #para un getter se pone esto
     def edad(self):
         return self.__edad
+    @edad.setter #para un setter
+    def edad(self,ed):
+        self.__edad = ed
 
 trista=Alumno("Leandro Trista", 33, "no")
 carlos=Alumno("Carlos Martin",21,"si")
 
+trista.edad = 55
 
+print(trista.edad)
 #public: edad
 #protected: _edad (dentro de la clase)
 #private: __private (dentro de la clase)

@@ -5,7 +5,7 @@ public class Empleados extends Persona {
     private int numDespacho;
 
     public Empleados(String nombre, String apellidos, String dni, String estadoCivil, String fechaIncorporacion, int numDespacho) {
-        super(nombre, apellidos, dni, estadoCivil);
+        super(nombre, apellidos, estadoCivil);
         this.fechaIncorporacion = fechaIncorporacion;
         this.numDespacho = numDespacho;
     }

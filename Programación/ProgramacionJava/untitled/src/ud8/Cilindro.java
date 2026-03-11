@@ -8,7 +8,6 @@ public class Cilindro extends Figuras {
     Circulo base;
     public Cilindro(String nombre,double radio, double altura){
         super(nombre);
-       this.base=new Circulo(nombre,radio);
         this.altura = altura;
     }
     public double calcularArea(){

@@ -5,7 +5,6 @@ public class UsoUniversidad {
         Persona [] personas  = new Persona[6];
         personas[0] = new Profesor("Juan","Lopez", "DCSFR45A","casade","27/02/2022",5,"informatica");
         personas[1] = new PersonaldeServicio("Petro","Gurierrez","7537484W","solteraYentera","07/04/1996",4,"limpieza");
-        personas[2] = new Persona("Miguel","Lopez","147484W","solteraYentera");
 
         for (int i = 0; i < 2; i++) {
             System.out.println(personas[i].toString());

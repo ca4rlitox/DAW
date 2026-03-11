@@ -1,17 +1,18 @@
 package ud7;
 
+//queremos que el dni se genere automaticamente
+// y no se repita, iniciandose 1, 2, 3, etc...
 public class Persona {
-    private String nombre;
-    private String apellidos;
-    private String dni;
-    private String estadoCivil;
+    private String nombre,apellidos,dni,estadoCivil;
+    private static int idSiguiente=1; //Para que se vea dentro de todas las clases, static. Para que no sea visible desde fuera, private.
 
-    public Persona(String nombre, String apellidos, String dni, String estadoCivil) {
+    public Persona(String nombre, String apellidos, String estadoCivil) {
         super();
         this.nombre = nombre;
         this.apellidos = apellidos;
-        this.dni = dni;
+        this.dni = idSiguiente+"";
         this.estadoCivil = estadoCivil;
+        idSiguiente++;
     }
     public String getNombre() {
         return nombre;
