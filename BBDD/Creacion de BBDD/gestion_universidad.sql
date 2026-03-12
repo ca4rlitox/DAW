@@ -46,12 +46,31 @@ CREATE TABLE asignaturas(
 CREATE TABLE imparten(
 	id_profesor SMALLINT NOT NULL,
 	id_asignatura SMALLINT NOT NULL,
-    tipo_grupo ENUM('TEORIA','PRACTICA') DEFAULT 'TEORIA');
+    tipo_grupo ENUM('TEORIA','PRACTICA') DEFAULT 'TEORIA',
+	CONSTRAINT fk_id_profesor_imparten PRIMARY KEY(id_profesor,id_asignatura)
+    );
     
 ALTER TABLE imparten
     ADD CONSTRAINT fk_id_profesor_imparten FOREIGN KEY(id_profesor)
 		REFERENCES profesores(id_profesor)
-        ON DELETE RESTRICT ON UPDATE CASCADE,
+        ON DELETE CASCADE,
 	ADD CONSTRAINT fk_id_asignatura_imparten FOREIGN KEY(id_asignatura)
 		REFERENCES asignaturas(id_asignatura)
-        ON DELETE RESTRICT ON UPDATE CASCADE;
+        ON DELETE CASCADE;
+        
+INSERT INTO `gestion_universidad`.`facultades`
+(`id_facultad`,
+`codigo`,
+`nombre`,
+`id_decano`)
+VALUES
+(1,1,'morosi',1);
+
+INSERT INTO `gestion_universidad`.`profesores`
+(`id_profesor`,
+`NIF`,
+`nombre_completo`,
+`salario`,
+`id_facultad`)
+VALUES
+(1,'51180393B','MORO SANCHEZ',2500,1)

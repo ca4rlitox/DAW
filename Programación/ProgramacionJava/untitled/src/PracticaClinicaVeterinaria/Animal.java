@@ -28,7 +28,7 @@ public abstract class Animal {
     public void setComentarios(String comentarios) {
         this.comentarios = comentarios;
     }
-    public String toString() {
+    public final String toString() {
         return "Nombre: "+this.nombre+" fecha nacimiento: "+this.fechaNacimiento+" comentarios: "+this.comentarios+" peso: "+this.peso;
     }
     public abstract String dameDatosAnimal();
