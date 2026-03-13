@@ -4,10 +4,10 @@ public abstract class Animal {
     private String nombre,fechaNacimiento,comentarios;
     private double peso;
 
-    public Animal(String nombre, String fechaNacimiento, String comentarios, double peso) {
+    public Animal(String nombre, String fechaNacimiento, double peso) {
         this.nombre = nombre;
         this.fechaNacimiento = fechaNacimiento;
-        this.comentarios = comentarios;
+        this.comentarios = "";
         this.peso = peso;
     }
     public String getNombre() {

@@ -3,30 +3,30 @@ package PracticaClinicaVeterinaria;
 import java.util.ArrayList;
 
 public class ClinicaVeterinaria {
-    private ArrayList<Animal> animales;
+    private ArrayList<Animal> listaAnimales;
 
     public ClinicaVeterinaria(){
-        animales = new ArrayList<>();
+        listaAnimales = new ArrayList<>();
     }
 
     public void insertaAnimal(Animal animal) {
-        animales.add(animal);
+        listaAnimales.add(animal);
     }
-    public String buscaAnimal(String nombre) {
+    public Animal buscaAnimal(String nombre) {
 
-        for (int i = 0; i < animales.size(); i++) {
-            if (animales.get(i).getNombre().equals(nombre)) {
-            return animales.get(i).dameDatosAnimal();
+        for (int i = 0; i < listaAnimales.size(); i++) {
+            if (listaAnimales.get(i).getNombre().equals(nombre)) {
+            return listaAnimales.get(i);
             }
         }
         return null;
     }
     public boolean modificaComentarioAnimal(String animal, String comentario) {
-        if (animales.isEmpty()) return false;
-        Animal a=animales.get(0);
-        for (int i = 0; i < animales.size(); i++) {
-            if (animales.get(i).getNombre().equals(animal)) {
-                a = animales.get(i);
+        if (listaAnimales.isEmpty()) return false;
+        Animal a = null;
+        for (Animal listaAnimale : listaAnimales) {
+            if (listaAnimale.getNombre().equals(animal)) {
+                a = listaAnimale;
             }
         }
         if (a == null) {
@@ -37,8 +37,8 @@ public class ClinicaVeterinaria {
     }
     public String toString() {
         String cad="";
-        for(int i = 0; i < animales.size(); i++){
-            cad+=animales.get(i).toString()+"\n";
+        for (Animal listaAnimale : listaAnimales) {
+            cad += listaAnimale.toString() + "\n";
         }
         return cad;
     }
