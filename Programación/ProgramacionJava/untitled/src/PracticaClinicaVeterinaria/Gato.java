@@ -10,7 +10,7 @@ public class Gato extends Animal {
     }
 
     public String dameDatosAnimal(){
-        return "Ficha de perro:\n" +
+        return "Ficha de gato:\n" +
                 "Nombre: "+ this.getNombre() +
                 "\nRaza: "+this.raza+
                 "\nFecha de nacimiento: "+this.getFechaNacimiento()+

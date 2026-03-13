@@ -1,9 +1,24 @@
 package PracticaClinicaVeterinaria;
 
+import java.util.ArrayList;
+
 public class ClinicaVeterinaria {
-    public static void main (String [] args) {
-        Perro perro = new Perro("Marcos", "01/04/2004", 14.5, "PastorAleman", "38479382749DF39");
-        perro.setComentarios("Es travieso");
-        System.out.println(perro);
+    private ArrayList<Animal> animales;
+
+    public ClinicaVeterinaria(){
+        ArrayList<Animal> animals = new ArrayList<>();
+    }
+
+    public void insertaAnimal(Animal animal) {
+        animales.add(animal);
+    }
+    public String buscaAnimal(String nombre) {
+
+        for (Animal animal: animales) {
+            if (animales.contains(animal)) {
+                return animal.dameDatosAnimal();
+            }
+        }
+        return null;
     }
 }
