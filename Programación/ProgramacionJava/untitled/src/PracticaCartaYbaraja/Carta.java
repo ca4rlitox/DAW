@@ -34,10 +34,10 @@ public class Carta {
                 palo = 3;
                 i=41;
             }
-        }
-        if (num < 1 || num > 40) {
-            numero = -1;
-            palo = -1;
+            if (num < 1 || num > 40) {
+                numero = -1;
+                palo = -1;
+            }
         }
     }
     private void setNumero(int num) {
@@ -120,6 +120,10 @@ public class Carta {
         if (carta.getNumero() > 0 && carta.getNumero() < 8) return carta.getNumero();
         if (carta.getNumero() > 7) return 0.5;
         return 0;
+    }
+
+    public String toString() {
+        return this.numero+"";
     }
 
 }
