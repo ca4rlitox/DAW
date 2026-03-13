@@ -4,7 +4,7 @@ public class Gato extends Animal {
     private String raza,microchip;
 
     public Gato (String nombre, String fechaNacimiento, double peso, String raza, String microchip) {
-        super(nombre,fechaNacimiento,"",peso);
+        super(nombre,fechaNacimiento,peso);
         setRaza(raza);
         this.microchip = microchip;
     }

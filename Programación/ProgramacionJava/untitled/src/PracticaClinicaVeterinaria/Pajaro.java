@@ -4,7 +4,7 @@ public class Pajaro extends Animal {
     private String especie;
     private boolean cantor;
     public Pajaro (String nombre, String fechaNacimiento, double peso, String especie, boolean cantor) {
-        super(nombre, fechaNacimiento,"", peso);
+        super(nombre, fechaNacimiento, peso);
         setEspecie(especie);
         this.cantor = cantor;
     }

@@ -5,7 +5,7 @@ public class Reptil extends Animal {
     private boolean venenoso;
 
     public Reptil (String nombre, String fechaNacimiento, double peso, String especie, boolean venenoso) {
-        super(nombre, fechaNacimiento, "", peso);
+        super(nombre, fechaNacimiento, peso);
         setEspecie(especie);
         this.venenoso = venenoso;
     }

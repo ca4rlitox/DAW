@@ -3,7 +3,7 @@ package PracticaClinicaVeterinaria;
 public class Perro extends Animal {
     private String raza,microchip;
     public Perro(String nombre, String fechaNacimiento, double peso, String raza, String microchip) {
-        super(nombre,fechaNacimiento,"",peso);
+        super(nombre,fechaNacimiento,peso);
         setRaza(raza);
         this.microchip = microchip;
     }
