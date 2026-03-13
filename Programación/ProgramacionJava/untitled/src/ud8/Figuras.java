@@ -18,8 +18,8 @@ public  abstract  class Figuras {
     public String getNombre() {
         return nombre;
     }
-    public abstract  double calcularArea();
-    public abstract  double calcularVolumen();
+    public abstract double calcularArea();
+    public abstract double calcularVolumen();
 
     @Override
     public String toString() {
