@@ -1,6 +1,7 @@
 package PracticaCartaYbaraja;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Random;
 
 public class Baraja {
@@ -48,19 +49,31 @@ public class Baraja {
                 lista_cartas.add(new Carta(numAle));
             }
         }
+
         if (barajar) {
-            ArrayList <Carta> otraListadeCartas = new ArrayList<>();
-            otraListadeCartas = lista_cartas;
-            for (int i = 0; i < 40; i++) {
-                otraListadeCartas.add(lista_cartas.get(i));
-            }
-            do {
-                int numAle = genAle.nextInt(39)+1;
-                int carta = otraListadeCartas.get(numAle).getNumero();
-                lista_cartas.add(new Carta(carta));
-                otraListadeCartas.remove(carta);
-            }while(!otraListadeCartas.isEmpty());
+            Collections.shuffle(lista_cartas);
         }
+    }
+
+    public void Barajar() {
+        Collections.shuffle(lista_cartas);
+    }
+    public void Cortar(int posicion) {
+        // Para cortar, hay que pasar la primera carta a la última posicion
+        // y asi tantas veces como nos digan por parametro
+        for (int i = 0; i < posicion; i++) {
+            Carta cartaPrimera = lista_cartas.get(0);
+            lista_cartas.remove(0);
+            lista_cartas.add(cartaPrimera);
+        }
+    }
+    public Carta Robar() {
+        Carta cartaaDevolver = lista_cartas.get(0);
+        lista_cartas.remove(0);
+        return cartaaDevolver;
+    }
+    public void InsertaCartaFinal(int id_carta) {
+
     }
 
     public String toString() {

@@ -1,4 +1,5 @@
 import random
+
 class Pokemon:
     #Duda: ¿Cómo admito solo dos atributos de tipo?
     def __init__(self,codigo,nombre,peso1,peso2,altura1,altura2,*tipos):
@@ -17,15 +18,25 @@ class Pokemon:
 
         self.tipos = tipos
 
+        if len(self.tipos) > 2:
+            raise AttributeError
+
+    @property
+    def verTipos(self):
+        if len(self.tipos) == 1:
+            return self.tipos[0]
+        else:
+            return f"{self.tipos[0]}, {self.tipos[1]}"
+
     def verDatos(self):
-        print(f"Código {self.codigo}, nombre: {self.nombre}, peso: {self.peso}, altura: {self.altura}, tipo/s: {self.tipos}")
+            print(f"Código {self.codigo}, nombre: {self.nombre}, peso: {self.peso}, altura: {self.altura}, tipo/s: {self.verTipos}")
 
 class Entrenador(Pokemon):
     def __init__(self,codigo,nombre,peso1,peso2,altura1,altura2,*tipos):
         super().__init__(codigo, nombre, peso1, peso2, altura1, altura2, *tipos)
 
     def verDatos(self):
-        print(f"Código entrenador {self.codigo}, nombre: {self.nombre}, peso: {self.peso}, altura: {self.altura}, tipo/s: {self.tipos}")
+        print(f"Código {self.codigo}, nombre: {self.nombre}, peso: {self.peso}, altura: {self.altura}, tipo/s: {self.verTipos}")
 
 
 class Equipo:
