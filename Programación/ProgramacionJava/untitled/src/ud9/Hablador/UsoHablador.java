@@ -1,11 +1,18 @@
 package ud9.Hablador;
 
+import java.util.ArrayList;
+
 public class UsoHablador {
     public static void main (String[] args) {
-        Español persona1 = new Español("Pepe","Huevoslargos");
+        Español persona1 = new Español("Pepe","Luis");
         Gato firulais = new Gato();
 
-        firulais.Saluda();
-        persona1.Saluda();
+        ArrayList<Hablador> saludos = new ArrayList<>();
+        saludos.add(persona1);
+        saludos.add(firulais);
+
+        for (Hablador hablador : saludos){
+            hablador.Saluda();
+        }
     }
 }
