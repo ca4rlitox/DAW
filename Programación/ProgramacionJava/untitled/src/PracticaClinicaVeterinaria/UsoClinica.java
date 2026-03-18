@@ -58,19 +58,46 @@ public class UsoClinica {
                 String comentariosAnimal = entrada.nextLine();
             }
         }
-        if (especieAnimal.equalsIgnoreCase("Perro")) {
-            System.out.println("Introduce la raza: ");
-            String razaAnimal = entrada.nextLine();
+        if (especieAnimal.equalsIgnoreCase("Perro") || especieAnimal.equalsIgnoreCase("Gato")) {
+            System.out.println("Introduce el número de microchip: ");
+            String microchipAnimal = entrada.nextLine();
+            if (especieAnimal.equalsIgnoreCase("Perro")) {
+                System.out.println("Introduce la raza: ");
+                String razaAnimal = entrada.nextLine();
                 while (!razaAnimal.equalsIgnoreCase("PastorAleman") && !razaAnimal.equalsIgnoreCase("Husky") &&
                         !razaAnimal.equalsIgnoreCase("FoxTerrier")) {
                     System.out.println("Raza no válida. Escribe de estas tres opciones: PastorAleman, Husky o FoxTerrier");
                     razaAnimal = entrada.nextLine();
                 }
 
+            } else if (especieAnimal.equalsIgnoreCase("Gato")) {
+                System.out.println("Introduce la raza: ");
+                String razaAnimal = entrada.nextLine();
+                while (!razaAnimal.equalsIgnoreCase("Comun") && !razaAnimal.equalsIgnoreCase("Siames") &&
+                        !razaAnimal.equalsIgnoreCase("Persa") && !razaAnimal.equalsIgnoreCase("Angora")
+                        && !razaAnimal.equalsIgnoreCase("ScottishFold")) {
+                    System.out.println("Raza no válida. Escribe de estas tres opciones: PastorAleman, Husky o FoxTerrier");
+                    razaAnimal = entrada.nextLine();
+                }
+            }
+        }
+        if (especieAnimal.equalsIgnoreCase("Reptil") || especieAnimal.equalsIgnoreCase("Pajaro")) {
+            System.out.println("Introduce la especie del animal:");
+            if (especieAnimal.equalsIgnoreCase("Reptil")) {
+                System.out.println("Introduce la especie: ");
+                String especie = entrada.nextLine();
+                while (!especie.equalsIgnoreCase("Tortuga") && !especie.equalsIgnoreCase("Iguana")
+                        && !especie.equalsIgnoreCase("DragonDeComodo")) {
+                    System.out.println("Raza no válida. Escribe de estas tres opciones: PastorAleman, Husky o FoxTerrier");
+                    especie = entrada.nextLine();
+                }
+                System.out.println("¿Es cantarín?");
+            }
         }
 
         return null;
-    }
+        }
+
 
 
 }
