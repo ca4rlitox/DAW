@@ -6,11 +6,9 @@ class Moto(Vehiculo):
     def __init__(self,conductor,matricula,ano_venta):
         super().__init__(conductor,matricula,ano_venta)
         hoy = date.today().year
-        self.ano_venta = datetime.strptime(str(ano_venta), '%Y').date()
-        self.anosCarnet = datetime.strptime(str(conductor.ano_carnet), '%Y').date()
-        self.cocheanos = self.ano_venta - hoy
-        self.edadConductor = conductor.fecha_nacimiento.year - date.today().year
-        self.anosCarnet = self.anosCarnet - conductor.ano_carnet
+        self.ano_venta = ano_venta
+        self.cocheanos = self.ano_venta - int(hoy)
+        self.anosCarnet = Conductor.verFechaNacimiento()
 
     def calcularSeguro(self,vehiculo,conductor,ano_venta):
         sumaseguro = 200
