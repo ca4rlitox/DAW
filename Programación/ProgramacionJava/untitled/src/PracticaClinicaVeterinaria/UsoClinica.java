@@ -42,7 +42,7 @@ public class UsoClinica {
         System.out.println("Introduce la fecha de nacimiento en formato DD/MM/YYYY");
         String fechaNacimiento = entrada.nextLine();
         System.out.println("Introduce el peso: ");
-        entrada.nextDouble();
+        entrada.nextLine();
         double pesoAnimal = entrada.nextDouble();
         System.out.println("¿Quieres introducir comentarios? (S/N)");
         char siNo = entrada.nextLine().charAt(0);

@@ -69,7 +69,7 @@ class Coche(Vehiculo):
               f"Puntos: {self.conductor.getPuntos}")
         sumaTotalFull=0
 
-        if anosCoche == 1 or anosCoche == 0:
+        if anosCoche == 0 or anosCoche == 1:
             sumaTotalFull+=400
         if anosCoche == 2:
             sumaTotalFull+=500
