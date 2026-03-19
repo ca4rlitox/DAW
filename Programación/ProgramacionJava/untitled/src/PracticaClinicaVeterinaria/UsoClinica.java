@@ -5,17 +5,22 @@ import java.util.Scanner;
 
 public class UsoClinica {
     static Scanner entrada = new Scanner(System.in);
+    static ArrayList<Animal> listaAnimales = new ArrayList<>();
     public static void main (String[] args) {
-        ArrayList<Animal> listaAnimales = new ArrayList<>();
-        int opcion;
 
+        int opcion;
         do{
             muestraMenu();
             opcion = entrada.nextInt();
             switch (opcion) {
                 case 1:
                     entrada.nextLine();
-                    anadirAnimal(listaAnimales);
+                    System.out.println("¿Que quieres añadir?\n" +
+                            "1. Para perro\n" +
+                            "2. Para gato\n" +
+                            "3. Para reptil\n" +
+                            "4. Para pajaro");
+                    addAnimal(entrada.nextInt());
 
             }
         } while (opcion != 5);
@@ -29,73 +34,56 @@ public class UsoClinica {
         System.out.println("4. Para ver la ficha de todos los animales.");
     }
 
-    public static ArrayList<Animal> anadirAnimal(ArrayList<Animal> listaAnimales) {
-        System.out.println("Introduce el nombre del animal que quieres dar de alta: ");
-        String especieAnimal = entrada.nextLine();
-            while (!especieAnimal.equalsIgnoreCase("Perro") && !especieAnimal.equalsIgnoreCase("Gato") &&
-                    !especieAnimal.equalsIgnoreCase("Reptil") && !especieAnimal.equalsIgnoreCase("Pajaro")) {
-                System.out.println("Has introducido algo que no está contemplado. Escribe perro, gato, reptil o pajaro");
-                especieAnimal = entrada.nextLine();
-        }
-        System.out.println("Introduce el nombre del "+especieAnimal+":");
-        String nombreAnimal = entrada.nextLine();
-        System.out.println("Introduce la fecha de nacimiento en formato DD/MM/YYYY");
-        String fechaNacimiento = entrada.nextLine();
-        System.out.println("Introduce el peso: ");
+    public static void addAnimal(int opcion) {
         entrada.nextLine();
+        if (opcion < 1 || opcion > 4) {
+            while (opcion < 1 || opcion > 4) {
+                System.out.println("Opcion introducida inválida. Inténtalo otra vez.");
+                opcion = entrada.nextInt();
+            }
+        }
+        System.out.println("Introduce el nombre del animal:");
+        String nombreAnimal = entrada.nextLine();
+        System.out.println("Introduce la fecha de nacimiento: ");
+        String fechaNacimientoAnimal = entrada.nextLine();
+        System.out.println("Introduce el peso del animal: ");
         double pesoAnimal = entrada.nextDouble();
-        System.out.println("¿Quieres introducir comentarios? (S/N)");
-        char siNo = entrada.nextLine().charAt(0);
-        if (siNo == 'S') {
-            System.out.println("Introduce los comentarios: ");
-            String comentariosAnimal = entrada.nextLine();
-        }
-        while (siNo != 'S' && siNo != 'N') {
-            System.out.println("Opcion introducida inválida, intentalo otra vez.");
-            System.out.println("¿Quieres introducir comentarios? (S/N)");
-            siNo = entrada.nextLine().charAt(0);
-            if (siNo == 'S') {
-                String comentariosAnimal = entrada.nextLine();
-            }
-        }
-        if (especieAnimal.equalsIgnoreCase("Perro") || especieAnimal.equalsIgnoreCase("Gato")) {
-            System.out.println("Introduce el número de microchip: ");
+        if (opcion == 1 || opcion == 2) {
+            entrada.nextLine();
+            System.out.println("Introduce la raza: ");
+            String razaAnimal = entrada.nextLine();
+            System.out.println("Introduce el microchip: ");
             String microchipAnimal = entrada.nextLine();
-            if (especieAnimal.equalsIgnoreCase("Perro")) {
-                System.out.println("Introduce la raza: ");
-                String razaAnimal = entrada.nextLine();
-                while (!razaAnimal.equalsIgnoreCase("PastorAleman") && !razaAnimal.equalsIgnoreCase("Husky") &&
-                        !razaAnimal.equalsIgnoreCase("FoxTerrier")) {
-                    System.out.println("Raza no válida. Escribe de estas tres opciones: PastorAleman, Husky o FoxTerrier");
-                    razaAnimal = entrada.nextLine();
-                }
-
-            } else if (especieAnimal.equalsIgnoreCase("Gato")) {
-                System.out.println("Introduce la raza: ");
-                String razaAnimal = entrada.nextLine();
-                while (!razaAnimal.equalsIgnoreCase("Comun") && !razaAnimal.equalsIgnoreCase("Siames") &&
-                        !razaAnimal.equalsIgnoreCase("Persa") && !razaAnimal.equalsIgnoreCase("Angora")
-                        && !razaAnimal.equalsIgnoreCase("ScottishFold")) {
-                    System.out.println("Raza no válida. Escribe de estas tres opciones: PastorAleman, Husky o FoxTerrier");
-                    razaAnimal = entrada.nextLine();
-                }
+            if (opcion == 1) {
+                listaAnimales.add(new Perro(nombreAnimal,fechaNacimientoAnimal,pesoAnimal,razaAnimal,microchipAnimal));
+            }
+            else{
+                listaAnimales.add(new Gato(nombreAnimal,fechaNacimientoAnimal,pesoAnimal,razaAnimal,microchipAnimal));
             }
         }
-        if (especieAnimal.equalsIgnoreCase("Reptil") || especieAnimal.equalsIgnoreCase("Pajaro")) {
-            System.out.println("Introduce la especie del animal:");
-            if (especieAnimal.equalsIgnoreCase("Reptil")) {
-                System.out.println("Introduce la especie: ");
-                String especie = entrada.nextLine();
-                while (!especie.equalsIgnoreCase("Tortuga") && !especie.equalsIgnoreCase("Iguana")
-                        && !especie.equalsIgnoreCase("DragonDeComodo")) {
-                    System.out.println("Raza no válida. Escribe de estas tres opciones: PastorAleman, Husky o FoxTerrier");
-                    especie = entrada.nextLine();
-                }
-                System.out.println("¿Es cantarín?");
+        System.out.println("String nombre, String fechaNacimiento, double peso, String especie, boolean venenoso");
+        if (opcion == 3) {
+            boolean venenoso=false;
+            System.out.println("Introduce la especie: ");
+            String especieAnimal = entrada.nextLine();
+            System.out.println("¿Es venenoso? Escribe una S para indicar que si, cualquier otra letra para indicar que no.");
+            char venenosoAnimal = entrada.nextLine().charAt(0);
+            if (venenosoAnimal == 'S'){
+                venenoso = true;
             }
+            listaAnimales.add(new Reptil(nombreAnimal,fechaNacimientoAnimal,pesoAnimal,especieAnimal,venenoso));
         }
-
-        return null;
+        if (opcion == 4) {
+            boolean cantarin=false;
+            System.out.println("Introduce la especie: ");
+            String especieAnimal = entrada.nextLine();
+            System.out.println("¿Es cantarin? Escribe una S para indicar que si, cualquier otra letra para indicar que no.");
+            char cantarinAnimal = entrada.nextLine().charAt(0);
+            if (cantarinAnimal == 'S'){
+                cantarin = true;
+            }
+            listaAnimales.add(new Pajaro(nombreAnimal,fechaNacimientoAnimal,pesoAnimal,especieAnimal,cantarin));
+        }
         }
 
 
