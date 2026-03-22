@@ -13,22 +13,17 @@ public class ClinicaVeterinaria {
         listaAnimales.add(animal);
     }
     public Animal buscaAnimal(String nombre) {
-
-        for (int i = 0; i < listaAnimales.size(); i++) {
-            if (listaAnimales.get(i).getNombre().equals(nombre)) {
-            return listaAnimales.get(i);
+        for (Animal listaAnimale : listaAnimales) {
+            if (listaAnimale.getNombre().equals(nombre)) {
+                return listaAnimale;
             }
         }
         return null;
     }
     public boolean modificaComentarioAnimal(String animal, String comentario) {
         if (listaAnimales.isEmpty()) return false;
-        Animal a = null;
-        for (Animal listaAnimale : listaAnimales) {
-            if (listaAnimale.getNombre().equals(animal)) {
-                a = listaAnimale;
-            }
-        }
+        Animal a = buscaAnimal(animal);
+
         if (a == null) {
             return false;
         }
