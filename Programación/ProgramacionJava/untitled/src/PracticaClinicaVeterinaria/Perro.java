@@ -26,6 +26,8 @@ public class Perro extends Animal {
         return microchip;
     }
 
+
+
     public String dameDatosAnimal() {
         return "Ficha de perro:\n" +
                 "Nombre: "+ this.getNombre() +

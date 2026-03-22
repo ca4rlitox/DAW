@@ -73,8 +73,24 @@ public class Baraja {
         return cartaaDevolver;
     }
     public void InsertaCartaFinal(int id_carta) {
-
+        lista_cartas.add(new Carta(id_carta));
     }
+    public void InsertaCartaPrincipio(int id_carta) {
+        lista_cartas.addFirst(new Carta(id_carta));
+    }
+    public void InsertaCartaFinal(Carta carta) {
+        lista_cartas.add(carta);
+    }
+    public void InsertaCartaPrincipio(Carta carta) {
+        lista_cartas.addFirst(carta);
+    }
+    public int NumeroCartas() {
+        return lista_cartas.size();
+    }
+    public boolean Vacia() {
+        return lista_cartas.isEmpty();
+    }
+
 
     public String toString() {
         return lista_cartas.toString();

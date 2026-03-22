@@ -34,10 +34,6 @@ public class Carta {
                 palo = 3;
                 i=41;
             }
-            if (num < 1 || num > 40) {
-                numero = -1;
-                palo = -1;
-            }
         }
     }
     private void setNumero(int num) {

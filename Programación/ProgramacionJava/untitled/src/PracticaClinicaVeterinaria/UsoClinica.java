@@ -59,8 +59,8 @@ public class UsoClinica {
         String fechaNacimientoAnimal = entrada.nextLine();
         System.out.println("Introduce el peso del animal: ");
         double pesoAnimal = entrada.nextDouble();
+        entrada.nextLine();
         if (opcion == 1 || opcion == 2) {
-            entrada.nextLine();
             System.out.println("Introduce la raza: ");
             String razaAnimal = entrada.nextLine();
             System.out.println("Introduce el microchip: ");
