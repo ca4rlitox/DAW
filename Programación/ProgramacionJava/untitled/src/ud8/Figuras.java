@@ -9,7 +9,7 @@ package ud8;
 //Cilindro (un cilindro se define por un punto, un radio y una altura.
 //El ´area de un cilin dro es dos veces e l ´area de un c´ırculo m ´as 2 ∗ π ∗
 //radio ∗ altura, y el volumen es π ∗ radio2 ∗ altura).
-public  abstract  class Figuras {
+public abstract  class Figuras {
     private  String nombre;
     public Figuras(String nombre){
         this.nombre=nombre;
