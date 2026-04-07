@@ -1,4 +1,4 @@
-package ud9.Comunicador;
+package ud8.Comunicador;
 
 public class Telegrafo extends Reliquia implements Comunicador {
     private String codigo;

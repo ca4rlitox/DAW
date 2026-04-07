@@ -1,4 +1,4 @@
-package ud9.EjemploCasteoObj;
+package ud8.EjemploCasteoObj;
 
 public class Persona {
     private String nombre;

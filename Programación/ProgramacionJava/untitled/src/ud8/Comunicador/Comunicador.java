@@ -1,4 +1,4 @@
-package ud9.Comunicador;
+package ud8.Comunicador;
 
 public interface Comunicador {
     //Una interfaz es un elemento en el que todos los métodos son abstractos.

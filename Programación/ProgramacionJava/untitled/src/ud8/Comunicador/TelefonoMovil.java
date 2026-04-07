@@ -1,4 +1,4 @@
-package ud9.Comunicador;
+package ud8.Comunicador;
 
 public class TelefonoMovil extends Telefono implements Comunicador{
     private String SO;
