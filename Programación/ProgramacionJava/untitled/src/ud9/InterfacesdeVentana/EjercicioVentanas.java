@@ -6,7 +6,7 @@ import java.awt.event.ActionListener;
 
 public class EjercicioVentanas extends JFrame implements ActionListener {
 /* Hacer una ventana para la cual se pida si quieres ir a la principal o a la otra*/
-
+    private JFrame ventana;
     private JPanel panel1,panel2;
     private JLabel et;
     private JButton boton1,boton2;
@@ -16,8 +16,10 @@ public class EjercicioVentanas extends JFrame implements ActionListener {
     }
 
     private void construirPanel() {
+        ventana = new JFrame();
         panel1 = new JPanel();
         panel2 = new JPanel();
+        ventana.add(panel1);
         panel1.setBounds(300,300,300,300);
         panel2.setBounds(100,100,300,300);
         et = new JLabel("¿Quieres ir a la otra ventana?");
