@@ -1,4 +1,4 @@
-package ud10.ExcepcionConjuntoLibro;
+package ud10.excepciones.ExcepcionConjuntoLibro;
 
 public class UsoLibro {
     public static void main (String[] args) {
