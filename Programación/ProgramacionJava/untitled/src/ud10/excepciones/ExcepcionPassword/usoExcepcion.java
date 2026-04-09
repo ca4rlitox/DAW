@@ -1,4 +1,4 @@
-package ud10.ExcepcionPassword;
+package ud10.excepciones.ExcepcionPassword;
 
 public class usoExcepcion {
 
@@ -6,7 +6,7 @@ public class usoExcepcion {
 
 
         try {
-            verificarPasswd("85848548");
+            verificarPasswd("uuu");
         } catch (excepcionNumeros e) {
             System.out.println(e.getMessage());
         }
@@ -25,10 +25,14 @@ public class usoExcepcion {
             if (caracter != '0' && caracter != '1' && caracter != '2' && caracter != '3' && caracter != '4'
                     && caracter != '5' && caracter != '6' && caracter != '7' && caracter != '8' && caracter != '9') {
                 numeros = false;
+                i=pass.length();
             }
         }
+        if (!longitud && !numeros) {
+            throw new excepcionLongitud("No tiene exactamente 8 caracteres y tiene caracteres que no son números.");
+        }
         if (!longitud) {
-            throw new excepcionLongitud("No tiene exactamente 8 caracteres o tiene caracteres que no son números.");
+            throw new excepcionLongitud("No tiene exactamente 8 caracteres.");
         }
         if (!numeros) {
             throw new excepcionNumeros("Contiene caracteres que no son números.");

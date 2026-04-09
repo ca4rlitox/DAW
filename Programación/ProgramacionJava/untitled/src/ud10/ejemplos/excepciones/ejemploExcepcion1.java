@@ -1,4 +1,4 @@
-package ud10;
+package ud10.ejemplos.excepciones;
 
 public class ejemploExcepcion1 {
 
