@@ -1,7 +1,7 @@
 class Persona():
     def __init__(self,nombre,apellido):
-        self.nombre = nombre
-        self.apellidos = apellido
+        self._nombre = nombre
+        self._apellidos = apellido
 
 class Funcionario():
     def __init__(self,cuerpo):
@@ -19,7 +19,7 @@ class Profesor(Persona,Funcionario):
         # aqui dentro hacemos la otra funcion que tiene que devolver
         def envoltorio(self):
             print("Buenos días cuerpo de", self._cuerpo)  # esto es la decoración, es opcional
-            funcion  # el momento que queremos que se ejecute nuestra función
+            funcion# el momento que queremos que se ejecute nuestra función
             print("Que tengas un buen día")  # otra decoración
 
         return envoltorio
