@@ -91,7 +91,7 @@ INSERT INTO raw_import_visitas VALUES
 select * from pacientes;
 SET SQL_SAFE_UPDATES = 0;
 
--- TABLA PACIENTES
+-- Normalización de Identidad (Pacientes):
 -- Hacemos un inner join con la misma tabla para comparar el nombre y el nif y borramos el que tenga el id mas alto
 DELETE p1 from pacientes p1 INNER JOIN pacientes p2
 WHERE p1.id > p2.id AND p1.nif = p2.nif AND p1.nombre_completo = p2.nombre_completo;
@@ -109,5 +109,34 @@ ALTER TABLE pacientes
 MODIFY COLUMN nif char(9) NOT NULL,
 ADD CONSTRAINT unique_nif UNIQUE(nif);
 
--- TABLA MEDICOS
+-- TABLA MEDICOS Hacer en casa, consistencia de colegiados con REGEXP.
 select * from medicos;
+
+-- Integridad Referencial:
+
+-- Los médicos con especialidades inexistentes deben asignarse a la especialidad ’Medicina General’.
+-- Añade las FOREIGN KEY correspondientes en medicos y visitas
+SELECT * FROM especialidades;
+
+select especialidad_id,IF(especialidad_id = 1 or especialidad_id = 2 or especialidad_id = 3 or especialidad_id = 4, 'correctos', 'incorrectos')
+from medicos;
+
+select especialidad_id from medicos where especialidad_id != 1 and especialidad_id != 2 and especialidad_id != 3 and especialidad_id != 4;
+
+-- Los médicos con especialidades inexistentes deben asignarse a la especialidad ’Medicina General’.
+begin;
+UPDATE medicos 
+SET especialidad_id = 1 
+WHERE especialidad_id NOT IN (1, 2, 3, 4);
+commit;
+-- Añade las FOREIGN KEY correspondientes en medicos y visitas
+begin;
+-- Cambiamos el tipo de dato en la tabla visitas de id_medico para que no pueda ser nulo, tal y como lo es en la tabla medicos.
+ALTER TABLE visitas
+MODIFY COLUMN medico_id int NOT NULL;
+-- Añadimos la FK a id_medicos
+ALTER TABLE visitas
+ADD CONSTRAINT fk_id_medico FOREIGN KEY(medico_id)
+	REFERENCES medicos(id);
+explain medicos;
+explain visitas;
