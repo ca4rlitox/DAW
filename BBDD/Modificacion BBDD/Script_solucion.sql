@@ -118,37 +118,7 @@ SET num_colegiado = CONCAT(
 )
 WHERE LENGTH(REGEXP_REPLACE(num_colegiado, '[^0-9]', '')) = 6
   AND num_colegiado NOT REGEXP '^COL-[0-9]{2}-[0-9]{4}$';
-  
--- Añadimos triggers para actualizar los que se están introduciendo y los que se van a introducir para limpiar la tabla.
-DELIMITER //
 
-CREATE TRIGGER trg_format_colegiado_insert
-BEFORE INSERT ON medicos
-FOR EACH ROW
-BEGIN
-    DECLARE clean_num VARCHAR(20);
-    SET clean_num = REGEXP_REPLACE(NEW.num_colegiado, '[^0-9]', '');
-    
-    IF LENGTH(clean_num) = 6 THEN
-        SET NEW.num_colegiado = CONCAT('COL-', SUBSTRING(clean_num, 1, 2), '-', SUBSTRING(clean_num, 3, 4));
-    END IF;
-END //
-
-CREATE TRIGGER trg_format_colegiado_update
-BEFORE UPDATE ON medicos
-FOR EACH ROW
-BEGIN
-    DECLARE clean_num VARCHAR(20);
-    
-    SET clean_num = REGEXP_REPLACE(NEW.num_colegiado, '[^0-9]', '');
-    
-    IF LENGTH(clean_num) = 6 THEN
-        SET NEW.num_colegiado = CONCAT('COL-', SUBSTRING(clean_num, 1, 2), '-', SUBSTRING(clean_num, 3, 4));
-    END IF;
-END //
-
-DELIMITER ;
-  
 -- Eliminamos los datos que no sigan el formato especificado.
 DELETE FROM medicos
 WHERE num_colegiado NOT REGEXP '^COL-[0-9]{2}-[0-9]{4}$';
@@ -256,3 +226,27 @@ SELECT
 FROM raw_import_visitas raw
 JOIN pacientes p 
   ON REGEXP_REPLACE(UPPER(p.nif), '[^A-Z0-9]', '') = REGEXP_REPLACE(UPPER(SUBSTRING_INDEX(raw.raw_data, '|', 1)), '[^A-Z0-9]', '');
+  
+  
+  
+-- Memoria técnica
+select * from visitas;
+-- Manejo de null si no tiene ni mail ni polizas:
+SELECT 
+    pacientes.nombre_completo,
+    COALESCE(pacientes.email, 'Sin email registrado - Contactar por teléfono') AS email_contacto,
+    COALESCE(seguros_pacientes.num_poliza, 'Paciente Privado (Sin Seguro)') AS estado_facturacion,
+    visitas.fecha_visita,
+    visitas.copago_estimado
+FROM pacientes
+LEFT JOIN seguros_pacientes ON pacientes.id = seguros_pacientes.id_paciente
+JOIN visitas ON pacientes.id = visitas.paciente_id;
+
+-- Saneamos las fechas. Ponemos el ignore para las fechas que no tengan tiempo, y las ponemos a 00:00
+UPDATE IGNORE visitas
+SET fecha_visita = COALESCE(
+    STR_TO_DATE(fecha_visita, '%d/%m/%Y %H:%i'),
+    STR_TO_DATE(fecha_visita, '%Y.%m.%d %H:%i'),
+    STR_TO_DATE(fecha_visita, '%d-%m-%Y %H:%i'),
+    STR_TO_DATE(fecha_visita, '%Y-%m-%d %H:%i')
+);
