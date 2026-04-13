@@ -6,8 +6,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class CalculadoraBasica extends JFrame implements ActionListener {
-    //atributos
-    private JFrame ventana; // la ventana
+    //atributosla ventana
     private JPanel panel; //contenido que esta dentro de la ventana
     private JTextField campoTexto1,campoTexto2;
     private JButton boton1,boton2;

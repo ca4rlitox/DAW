@@ -7,13 +7,13 @@ public class leerModoTexto {
     public static void main (String[] args) {
         String cadenaFich="";
         FileReader entrada;
-        int car=0;
+        int fila=0;
         try {
             entrada = new FileReader("/home/alumno/Escritorio/fich.txt");
-            while(car!=-1) {
-                car = entrada.read();
-                if (car != -1) {
-                    cadenaFich+=(char)car;
+            while(fila!=-1) {
+                fila = entrada.read();
+                if (fila != -1) {
+                    cadenaFich+=(char)fila;
                 }
                 System.out.println(cadenaFich);
             }
