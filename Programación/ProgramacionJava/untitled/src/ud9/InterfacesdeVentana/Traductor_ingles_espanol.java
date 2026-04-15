@@ -62,4 +62,3 @@ public class Traductor_ingles_espanol extends JFrame implements ActionListener {
         }
     }
 }
-

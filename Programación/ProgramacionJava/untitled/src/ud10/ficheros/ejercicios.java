@@ -14,6 +14,23 @@ public class ejercicios {
 
     public static void LeeFicheroInt100() {
         System.out.println("Ejercicio 2: ");
+
+
+    }
+    public void EscribeFicheroNumRandom10_2(String fichero) throws IOException {
+        String contFichero="";
+        for (int i = 0; i < 10; i++) {
+            //genero el contenido del fichero
+            contFichero+=genAle.nextInt(100)+"\n";
+        }
+        System.out.println(contFichero);
+        try {
+            FileWriter fichero1= new FileWriter(fichero);
+        } catch (IOException e) {
+            System.out.println(e.getMessage());
+        }
+            fichero1.close();
+
     }
     public static void EscribeFicheroNumRandom10() {
         FileWriter escritura;
