@@ -8,9 +8,32 @@ public class ejercicios {
     static Scanner entrada = new Scanner(System.in);
     static Random genAle = new Random();
     public static void main (String[] args) {
-        CopiaFicheroTexto();
+        SumaFicheroInt();
     }
 
+    public static void SeparaPalabrasFichero() {
+        System.out.println("Ejercicio 10:");
+        try {
+            int caracter;
+            System.out.println("Introduce el nombre del fichero a copiar: ");
+            String nomFich = entrada.nextLine();
+            FileReader lectura = new FileReader(nomFich);
+            System.out.println("Introduce el nombre del fichero a crear: ");
+            String fichCreado = entrada.nextLine();
+            FileWriter escritura = new FileWriter(fichCreado);
+
+            while ((caracter = lectura.read()) != -1) {
+                escritura.write(caracter);
+                if (caracter == 32) {
+                    escritura.write("\n");
+                }
+            }
+            escritura.close();
+            lectura.close();
+        } catch (IOException e) {
+            System.out.println(e.getMessage());
+        }
+    }
     public static void CopiaFicheroTexto() {
         System.out.println("Ejercicio 7: ");
         int caracter;
@@ -25,6 +48,8 @@ public class ejercicios {
             while((caracter = lectura.read()) != -1) {
                 escritura.write(caracter);
             }
+            escritura.close();
+            lectura.close();
 
         } catch (IOException e) {
             System.out.println(e.getMessage());
@@ -101,20 +126,22 @@ public class ejercicios {
 
 
     }
-    public void SumaFicheroInt10(String fichero) throws IOException {
-        String contFichero="";
-        for (int i = 0; i < 10; i++) {
-            //genero el contenido del fichero
-            contFichero+=genAle.nextInt(100)+"\n";
-        }
-        System.out.println(contFichero);
-        try {
-            FileWriter fichero1= new FileWriter(fichero);
-            fichero1.close();
-        } catch (IOException e) {
+    public void SumaFicheroInt10(String fichero) {
+        System.out.println("Ejercicio 2: ");
+        System.out.println("Introduce el nombre del fichero: ");
+        String nomFich = entrada.nextLine();
+        try (FileReader lectura = new FileReader(nomFich)) {
+            int suma = 0;
+            int caracter = 0;
+            while ((caracter= lectura.read()) != -1 && caracter != 32) {
+                suma+=caracter;
+            }
+
+            lectura.close();
+            System.out.println(suma);
+        }catch (IOException e) {
             System.out.println(e.getMessage());
         }
-
     }
     public static void EscribeFicheroNumRandom10() {
         FileWriter escritura;
@@ -123,7 +150,7 @@ public class ejercicios {
             System.out.println("Indica el nombre del fichero a escribir");
             escritura = new FileWriter(entrada.nextLine());
             for (int i = 0; i < 10; i++) {
-                escritura.write(genAle.nextInt()+"\n");
+                escritura.write(genAle.nextInt(100)+"\n");
             }
             escritura.close();
         } catch (IOException e) {
