@@ -132,7 +132,7 @@ public class ejercicios {
         String nomFich = entrada.nextLine();
         try (FileReader lectura = new FileReader(nomFich)) {
             int suma = 0;
-            int caracter = 0;
+            int caracter;
             while ((caracter= lectura.read()) != -1 && caracter != 32) {
                 suma+=caracter;
             }
