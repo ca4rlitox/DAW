@@ -57,7 +57,7 @@ public class ejercicios {
     }
 
     public static void LeeFicheroTexto() {
-        int caracter =0;
+        int caracter;
         System.out.println("Ejercicio 6: ");
         System.out.println("Indica el nombre del fichero");
         String nombreFichero = entrada.nextLine()+".txt";
@@ -73,7 +73,7 @@ public class ejercicios {
         System.out.println("Ejercicio 5: ");
         System.out.println("Indica el nombre del fichero");
         String nombreFichero = entrada.nextLine();
-        try (FileWriter escritura = new FileWriter(nombreFichero);) {
+        try (FileWriter escritura = new FileWriter(nombreFichero)) {
             System.out.println("Introduce la siguiente linea: ");
             String linea = entrada.nextLine();
             escritura.write(linea+"\n");
@@ -97,7 +97,7 @@ public class ejercicios {
         System.out.println("Ejercicio 4: ");
         System.out.println("Indica el nombre del fichero");
         String nombreFichero = entrada.nextLine();
-        try (FileReader lectura = new FileReader(nombreFichero);) {
+        try (FileReader lectura = new FileReader(nombreFichero)) {
             // Primero contamos las lineas que tiene el fichero
             while (lectura.read() != -1) {
                 if (lectura.read() != -1) {
@@ -116,7 +116,7 @@ public class ejercicios {
         String nombreFichero = entrada.nextLine();
         System.out.println("Indica el número de números aleatorios que quieres: ");
         int numLineas = entrada.nextInt();
-        try (FileWriter fichero = new FileWriter(nombreFichero+".txt");) {
+        try (FileWriter fichero = new FileWriter(nombreFichero+".txt")) {
             for (int i = 0; i < numLineas; i++) {
                 fichero.write(genAle.nextInt(100)+"\n");
             }
