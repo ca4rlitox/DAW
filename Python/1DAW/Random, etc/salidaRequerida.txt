@@ -1,0 +1,128 @@
+One Piece
+- Roronoa Zoro
+- Vinsmoke Sanji
+Demon Slayer
+- Tanjiro Kamado
+Hunter x Hunter
+- No hay personajes
+Naruto
+
+def generar_lista_animes(archivo_personajes, archivo_animes, archivo_salida):
+    # Diccionario para almacenar los animes: { '17': 'Naruto', ... }
+    animes = {}
+
+    # Leemos el archivo de animes
+    try:
+        with open(archivo_animes, 'r', encoding='utf-8') as f_animes:
+            for linea in f_animes:
+                linea = linea.strip()
+                if linea:
+                    # Separamos por el primer espacio. El 1 indica que solo haga un split.
+                    partes = linea.split(' ', 1)
+                    if len(partes) == 2:
+                        id_anime = partes[0]
+                        nombre_anime = partes[1]
+                        animes[id_anime] = nombre_anime
+    except FileNotFoundError:
+        print(f"Error: No se encontró el archivo {archivo_animes}")
+        return
+
+    # Diccionario para almacenar los personajes agrupados por ID del anime: { '3': ['Vinsmoke Sanji', 'Roronoa Zoro'], ... }
+    personajes = {}
+
+    # Leemos el archivo de personajes
+    try:
+        with open(archivo_personajes, 'r', encoding='utf-8') as f_personajes:
+            for linea in f_personajes:
+                linea = linea.strip()
+                if linea:
+                    partes = linea.split(' ', 1)
+                    if len(partes) == 2:
+                        id_anime = partes[0]
+                        nombre_personaje = partes[1]
+
+                        # Si el ID aún no está en el diccionario, creamos una lista vacía
+                        if id_anime not in personajes:
+                            personajes[id_anime] = []
+                        # Añadimos el personaje a la lista correspondiente
+                        personajes[id_anime].append(nombre_personaje)
+    except FileNotFoundError:
+        print(f"Error: No se encontró el archivo {archivo_personajes}")
+        return
+
+    # Generamos el archivo de salida
+    with open(archivo_salida, 'w', encoding='utf-8') as f_salida:
+        # Recorremos todos los animes que hemos guardado
+        for id_anime, nombre_anime in animes.items():
+            f_salida.write(f"{nombre_anime}\n")
+
+            # Comprobamos si hay personajes para este ID
+            if id_anime in personajes:
+                for personaje in personajes[id_anime]:
+                    f_salida.write(f"- {personaje}\n")
+            else:
+                f_salida.write("- No hay personajes\n")
+
+    print(f"¡Proceso completado! Los resultados se han guardado en '{archivo_salida}'.")
+
+# --- Ejecución del programa ---
+if __name__ == "__main__":
+    # Asegúrate de que los nombres coinciden con los de tus archivos reales
+    generar_lista_animes('personajes.txt', 'animes.txt', 'salida.txt')
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+animes = {}
+try:
+    with open("animes.txt", 'r') as fichAnime:
+        for linea in fichAnime:
+            linea = linea.strip()
+            if linea:
+                # Usamos la alternativa al maxsplit
+                partes = linea.split()
+                if len(partes) >= 2:
+                    idAnime = partes[0]
+                    nombreAnime = " ".join(partes[1:])
+                    animes[idAnime] = nombreAnime
+    print("Animes cargados:", animes)
+except FileNotFoundError:
+    print("Error, el archivo animes.txt no existe")
+
+personajes = {}
+try:
+    with open("/home/alumno/DAW/Python/1DAW/personajes.txt", 'r') as fichPersonajes:
+        for linea in fichPersonajes:
+            linea = linea.strip()
+            if linea:
+                partes = linea.split()
+                if len(partes) >= 2:
+                    idAnime = partes[0]
+                    nomPersonaje = " ".join(partes[1:])
+
+                    # CORRECCIÓN: Comprobamos si la clave existe. Si no, creamos la lista.
+                    if idAnime not in personajes:
+                        personajes[idAnime] = []
+
+                    personajes[idAnime].append(nomPersonaje)
+
+    print("Personajes cargados:", personajes)
+except FileNotFoundError:
+    print("Error, el archivo personajes.txt no existe")
