@@ -1,0 +1,270 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="estilos.xsl"?>
+<!DOCTYPE catalogo SYSTEM "validacion.dtd">
+<catalogo tienda="Nexus Tabletop" version="1.0" actualizado="11/05/2026">
+
+  <juego id="JG001">
+    <nombre>Catan</nombre>
+    <editorial>Devir</editorial>
+    <anio>1995</anio>
+    <mecanica>Gestión de recursos</mecanica>
+    <genero>Estrategia</genero>
+    <jugadores min="3" max="4"/>
+    <duracion unidad="minutos">90</duracion>
+    <edad minima="10"/>
+    <idioma>Español</idioma>
+    <precio moneda="EUR">44.95</precio>
+    <stock>12</stock>
+    <descripcion>Coloniza Catan intercambiando recursos y construyendo poblados en un tablero modular.</descripcion>
+    <puntuacion>9.2</puntuacion>
+    <etiquetas>
+      <etiqueta>Familiar</etiqueta>
+      <etiqueta>Negociación</etiqueta>
+      <etiqueta>Clásico</etiqueta>
+    </etiquetas>
+    <estado>disponible</estado>
+  </juego>
+
+  <juego id="JG002">
+    <nombre>Pandemic</nombre>
+    <editorial>Z-Man Games</editorial>
+    <anio>2008</anio>
+    <mecanica>Cooperativo</mecanica>
+    <genero>Estrategia</genero>
+    <jugadores min="2" max="4"/>
+    <duracion unidad="minutos">60</duracion>
+    <edad minima="8"/>
+    <idioma>Español</idioma>
+    <precio moneda="EUR">39.95</precio>
+    <stock>8</stock>
+    <descripcion>Coopera con tu equipo de especialistas para erradicar cuatro enfermedades mortales antes de una crisis global.</descripcion>
+    <puntuacion>9.0</puntuacion>
+    <etiquetas>
+      <etiqueta>Cooperativo</etiqueta>
+      <etiqueta>Temático</etiqueta>
+      <etiqueta>Tenso</etiqueta>
+    </etiquetas>
+    <estado>disponible</estado>
+  </juego>
+
+  <juego id="JG003">
+    <nombre>Gloomhaven</nombre>
+    <editorial>Cephalofair Games</editorial>
+    <anio>2017</anio>
+    <mecanica>Dungeon Crawler</mecanica>
+    <genero>Aventura</genero>
+    <jugadores min="1" max="4"/>
+    <duracion unidad="minutos">120</duracion>
+    <edad minima="14"/>
+    <idioma>Inglés</idioma>
+    <precio moneda="EUR">149.95</precio>
+    <stock>3</stock>
+    <descripcion>Campaña épica de exploración de mazmorras con narrativa evolutiva y combate innovador mediante cartas.</descripcion>
+    <puntuacion>9.7</puntuacion>
+    <etiquetas>
+      <etiqueta>Campaña</etiqueta>
+      <etiqueta>RPG</etiqueta>
+      <etiqueta>Cooperativo</etiqueta>
+    </etiquetas>
+    <estado>disponible</estado>
+  </juego>
+
+  <juego id="JG004">
+    <nombre>Ticket to Ride: Europa</nombre>
+    <editorial>Days of Wonder</editorial>
+    <anio>2005</anio>
+    <mecanica>Conexión de rutas</mecanica>
+    <genero>Familiar</genero>
+    <jugadores min="2" max="5"/>
+    <duracion unidad="minutos">75</duracion>
+    <edad minima="8"/>
+    <idioma>Español</idioma>
+    <precio moneda="EUR">42.00</precio>
+    <stock>15</stock>
+    <descripcion>Construye rutas ferroviarias a lo largo de Europa completando trayectos secretos.</descripcion>
+    <puntuacion>8.8</puntuacion>
+    <etiquetas>
+      <etiqueta>Familiar</etiqueta>
+      <etiqueta>Gateway</etiqueta>
+      <etiqueta>Coleccionar sets</etiqueta>
+    </etiquetas>
+    <estado>disponible</estado>
+  </juego>
+
+  <juego id="JG005">
+    <nombre>Wingspan</nombre>
+    <editorial>Stonemaier Games</editorial>
+    <anio>2019</anio>
+    <mecanica>Gestión de mano</mecanica>
+    <genero>Estrategia</genero>
+    <jugadores min="1" max="5"/>
+    <duracion unidad="minutos">70</duracion>
+    <edad minima="10"/>
+    <idioma>Español</idioma>
+    <precio moneda="EUR">54.95</precio>
+    <stock>6</stock>
+    <descripcion>Juego competitivo y galardonado centrado en coleccionar y gestionar diversas especies de aves.</descripcion>
+    <puntuacion>9.1</puntuacion>
+    <etiquetas>
+      <etiqueta>Motor de cartas</etiqueta>
+      <etiqueta>Naturaleza</etiqueta>
+      <etiqueta>Premiado</etiqueta>
+    </etiquetas>
+    <estado>disponible</estado>
+  </juego>
+
+  <juego id="JG006">
+    <nombre>Terraforming Mars</nombre>
+    <editorial>FryxGames</editorial>
+    <anio>2016</anio>
+    <mecanica>Gestión de recursos</mecanica>
+    <genero>Estrategia</genero>
+    <jugadores min="1" max="5"/>
+    <duracion unidad="minutos">150</duracion>
+    <edad minima="12"/>
+    <idioma>Inglés</idioma>
+    <precio moneda="EUR">59.95</precio>
+    <stock>5</stock>
+    <descripcion>Compite con otras corporaciones para hacer habitable Marte administrando ambiciosos proyectos científicos.</descripcion>
+    <puntuacion>9.3</puntuacion>
+    <etiquetas>
+      <etiqueta>Ciencia ficción</etiqueta>
+      <etiqueta>Motor de producción</etiqueta>
+      <etiqueta>Largo</etiqueta>
+    </etiquetas>
+    <estado>disponible</estado>
+  </juego>
+
+  <juego id="JG007">
+    <nombre>Dixit</nombre>
+    <editorial>Libellud</editorial>
+    <anio>2008</anio>
+    <mecanica>Narración creativa</mecanica>
+    <genero>Familiar</genero>
+    <jugadores min="3" max="6"/>
+    <duracion unidad="minutos">30</duracion>
+    <edad minima="8"/>
+    <idioma>Español</idioma>
+    <precio moneda="EUR">32.95</precio>
+    <stock>20</stock>
+    <descripcion>Describe ilustraciones surrealistas usando tu imaginación en este creativo juego de pistas y votación.</descripcion>
+    <puntuacion>8.5</puntuacion>
+    <etiquetas>
+      <etiqueta>Familiar</etiqueta>
+      <etiqueta>Creativo</etiqueta>
+      <etiqueta>Gateway</etiqueta>
+    </etiquetas>
+    <estado>disponible</estado>
+  </juego>
+
+  <juego id="JG008">
+    <nombre>7 Wonders</nombre>
+    <editorial>Repos Production</editorial>
+    <anio>2010</anio>
+    <mecanica>Draft de cartas</mecanica>
+    <genero>Estrategia</genero>
+    <jugadores min="2" max="7"/>
+    <duracion unidad="minutos">40</duracion>
+    <edad minima="10"/>
+    <idioma>Español</idioma>
+    <precio moneda="EUR">37.95</precio>
+    <stock>9</stock>
+    <descripcion>Desarrolla tu civilización liderando una gran ciudad de la antigüedad mediante el draft de cartas a través de tres eras.</descripcion>
+    <puntuacion>8.9</puntuacion>
+    <etiquetas>
+      <etiqueta>Histórico</etiqueta>
+      <etiqueta>Draft</etiqueta>
+      <etiqueta>Escalable</etiqueta>
+    </etiquetas>
+    <estado>disponible</estado>
+  </juego>
+
+  <juego id="JG009">
+    <nombre>Root</nombre>
+    <editorial>Leder Games</editorial>
+    <anio>2018</anio>
+    <mecanica>Asimétrico</mecanica>
+    <genero>Estrategia</genero>
+    <jugadores min="2" max="4"/>
+    <duracion unidad="minutos">90</duracion>
+    <edad minima="10"/>
+    <idioma>Inglés</idioma>
+    <precio moneda="EUR">64.95</precio>
+    <stock>4</stock>
+    <descripcion>Juego de guerra asimétrico en el bosque donde cada facción animal juega con reglas y objetivos únicos.</descripcion>
+    <puntuacion>9.4</puntuacion>
+    <etiquetas>
+      <etiqueta>Asimétrico</etiqueta>
+      <etiqueta>Guerra</etiqueta>
+      <etiqueta>Complejo</etiqueta>
+    </etiquetas>
+    <estado>disponible</estado>
+  </juego>
+
+  <juego id="JG010">
+    <nombre>Azul</nombre>
+    <editorial>Plan B Games</editorial>
+    <anio>2017</anio>
+    <mecanica>Draft de azulejos</mecanica>
+    <genero>Abstracto</genero>
+    <jugadores min="2" max="4"/>
+    <duracion unidad="minutos">45</duracion>
+    <edad minima="8"/>
+    <idioma>Español</idioma>
+    <precio moneda="EUR">35.95</precio>
+    <stock>18</stock>
+    <descripcion>Decora el palacio real seleccionando estratégicamente azulejos portugueses sin desperdiciar materiales.</descripcion>
+    <puntuacion>9.0</puntuacion>
+    <etiquetas>
+      <etiqueta>Abstracto</etiqueta>
+      <etiqueta>Familiar</etiqueta>
+      <etiqueta>Premiado</etiqueta>
+    </etiquetas>
+    <estado>disponible</estado>
+  </juego>
+
+  <juego id="JG011">
+    <nombre>Viticulture: Essential Edition</nombre>
+    <editorial>Stonemaier Games</editorial>
+    <anio>2015</anio>
+    <mecanica>Colocación de trabajadores</mecanica>
+    <genero>Estrategia</genero>
+    <jugadores min="1" max="6"/>
+    <duracion unidad="minutos">90</duracion>
+    <edad minima="13"/>
+    <idioma>Español</idioma>
+    <precio moneda="EUR">54.95</precio>
+    <stock>7</stock>
+    <descripcion>Gestiona un viñedo en la Toscana colocando trabajadores para plantar uvas, producir y vender vino.</descripcion>
+    <puntuacion>8.8</puntuacion>
+    <etiquetas>
+      <etiqueta>Colocación de trabajadores</etiqueta>
+      <etiqueta>Temático</etiqueta>
+      <etiqueta>Italiano</etiqueta>
+    </etiquetas>
+    <estado>disponible</estado>
+  </juego>
+
+  <juego id="JG012">
+    <nombre>Mysterium</nombre>
+    <editorial>Libellud</editorial>
+    <anio>2015</anio>
+    <mecanica>Deducción cooperativa</mecanica>
+    <genero>Misterio</genero>
+    <jugadores min="2" max="7"/>
+    <duracion unidad="minutos">42</duracion>
+    <edad minima="10"/>
+    <idioma>Español</idioma>
+    <precio moneda="EUR">41.95</precio>
+    <stock>11</stock>
+    <descripcion>Juego cooperativo de deducción donde un fantasma utiliza visiones oníricas para ayudar a resolver su propio asesinato.</descripcion>
+    <puntuacion>8.7</puntuacion>
+    <etiquetas>
+      <etiqueta>Cooperativo</etiqueta>
+      <etiqueta>Deducción</etiqueta>
+      <etiqueta>Halloween</etiqueta>
+    </etiquetas>
+    <estado>novedad</estado>
+  </juego>
+
+</catalogo>

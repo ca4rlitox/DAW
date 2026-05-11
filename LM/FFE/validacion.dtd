@@ -1,0 +1,44 @@
+<!-- DTD para el catálogo de Nexus Tabletop -->
+<!ELEMENT catalogo (juego+)>
+<!ATTLIST catalogo
+          tienda CDATA #REQUIRED
+          version CDATA #REQUIRED
+          actualizado CDATA #REQUIRED>
+
+<!ELEMENT juego (nombre, editorial, anio, mecanica, genero, jugadores, duracion, edad, idioma, precio, stock, descripcion, puntuacion, etiquetas, estado)>
+<!ATTLIST juego
+          id ID #REQUIRED>
+
+<!ELEMENT nombre (#PCDATA)>
+<!ELEMENT editorial (#PCDATA)>
+<!ELEMENT anio (#PCDATA)>
+<!ELEMENT mecanica (#PCDATA)>
+<!ELEMENT genero (#PCDATA)>
+
+<!ELEMENT jugadores EMPTY>
+<!ATTLIST jugadores
+          min CDATA #REQUIRED
+          max CDATA #REQUIRED>
+
+<!ELEMENT duracion (#PCDATA)>
+<!ATTLIST duracion
+          unidad CDATA #REQUIRED>
+
+<!ELEMENT edad EMPTY>
+<!ATTLIST edad
+          minima CDATA #REQUIRED>
+
+<!ELEMENT idioma (#PCDATA)>
+
+<!ELEMENT precio (#PCDATA)>
+<!ATTLIST precio
+          moneda CDATA #REQUIRED>
+
+<!ELEMENT stock (#PCDATA)>
+<!ELEMENT descripcion (#PCDATA)>
+<!ELEMENT puntuacion (#PCDATA)>
+
+<!ELEMENT etiquetas (etiqueta+)>
+<!ELEMENT etiqueta (#PCDATA)>
+
+<!ELEMENT estado (#PCDATA)>

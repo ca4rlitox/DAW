@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+  <channel>
+    <title>Nexus Tabletop - Novedades</title>
+    <link>https://www.nexustabletop.com</link>
+    <description>Las últimas noticias, lanzamientos y reposiciones de nuestro catálogo de juegos de mesa.</description>
+    <language>es</language>
+
+    <item>
+      <title>¡Novedad en tienda! Mysterium</title>
+      <link>https://www.nexustabletop.com/catalogo.xml#JG012</link>
+      <description>Acabamos de añadir Mysterium a nuestro catálogo. Un juego cooperativo de deducción donde un fantasma utiliza visiones oníricas para ayudar a resolver su propio asesinato.</description>
+    </item>
+
+    <item>
+      <title>Aviso de bajo stock: Gloomhaven</title>
+      <link>https://www.nexustabletop.com/catalogo.xml#JG003</link>
+      <description>¡Aventureros, daos prisa! Solo nos quedan 3 unidades en stock de la inmensa campaña épica de exploración de mazmorras.</description>
+    </item>
+
+    <item>
+      <title>Lanzamiento de nuestro nuevo catálogo digital</title>
+      <link>https://www.nexustabletop.com/index.html</link>
+      <description>¡Bienvenido a la nueva era de Nexus Tabletop! Estrenamos un nuevo ecosistema web estructurado en XML, para que consultes nuestro catálogo con total claridad y rapidez.</description>
+    </item>
+
+  </channel>
+</rss>
