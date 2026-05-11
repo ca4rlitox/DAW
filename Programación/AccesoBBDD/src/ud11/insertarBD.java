@@ -9,13 +9,15 @@ public class insertarBD {
         String user="admin";
         String pass="1234";
         String uri="jdbc:mysql://localhost:3306/BD_CLIENTES";
-        String consulta="SELECT * FROM clientes";
+        String consulta="INSERT INTO clientes VALUES ('1323a','Paco',40)";
 
         try (Connection conector = DriverManager.getConnection(uri, user, pass)) /* Creamos la conexion */ {
-            Statement stmt = conector.createStatement(); /*Creamos un objeto que simboliza una instruccion SQL*/
-            ResultSet consultas = stmt.executeQuery(consulta);
-            System.out.println("Conexion OK");
-            System.out.println(consultas);
+            Statement statement = conector.createStatement(); /*Creamos un objeto que simboliza una instruccion SQL*/
+            int rows = statement.executeUpdate(consulta); /* Ejecutamos la instruccion SQL */
+            System.out.println("Filas afectadas: "+rows);
+            // El select devuelve un resultset para escribir
+            conector.close();
+
 
         } catch (SQLException e) {
             System.out.println(e.getMessage());
