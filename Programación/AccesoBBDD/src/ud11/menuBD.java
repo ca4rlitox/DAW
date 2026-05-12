@@ -1,9 +1,6 @@
 package ud11;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.SQLException;
-import java.sql.Statement;
+import java.sql.*;
 import java.util.Scanner;
 
 public class menuBD {
@@ -53,15 +50,43 @@ public class menuBD {
                         Statement stamt = conector.createStatement();
                         System.out.println("Filas afectadas: "+stamt.executeUpdate(consulta));
                         break;
+                    case 4:
+                        entrada.nextLine();
+                        System.out.println("Introduce el id a revisar: ");
+                        nombre = entrada.nextLine();
+                        Statement statement1 = conector.createStatement();
+                        consulta = "SELECT * FROM clientes WHERE id = "+nombre;
+                        ResultSet rs = statement1.executeQuery(consulta);
+                        while(rs.next()) {
+                            id = rs.getString("id");
+                            nombre = rs.getString("nombre");
+                            edad = rs.getInt("edad");
+                            System.out.println("ID: "+id+" nombre: "+nombre+" edad: "+edad);
+                        }
+                        break;
+                    case 5:
+                        entrada.nextLine();
+                        Statement statement2 = conector.createStatement();
+                        consulta = "SELECT * FROM clientes";
+                        ResultSet rs1 = statement2.executeQuery(consulta);
+                        while (rs1.next()) {
+                            id = rs1.getString("id");
+                            nombre = rs1.getString("nombre");
+                            edad = rs1.getInt("edad");
+                            System.out.println("ID: "+id+" nombre: "+nombre+" edad: "+edad);
+                        }
+                        break;
+                    case 6:
+                        System.out.println("Has salido correctamente.");
+                        break;
                     default:
                         System.out.println("Opción no válida. Intentalo de nuevo.");
                 }
 
-            } while (opcion != 4);
+            } while (opcion != 6);
             conector.close();
-    } catch(SQLException e)
 
-    {
+    } catch(SQLException e) {
         System.out.println(e.getMessage());
     }
 }
@@ -69,6 +94,8 @@ public class menuBD {
         System.out.println("1. Insertar cliente");
         System.out.println("2. Actualizar por id");
         System.out.println("3. Borrar por id");
-        System.out.println("4. Salir");
+        System.out.println("4. Consultar por id");
+        System.out.println("5. Consultar todos los datos en la BBDD");
+        System.out.println("6. Salir");
     }
     }
