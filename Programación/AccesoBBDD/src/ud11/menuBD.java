@@ -4,12 +4,17 @@ import java.sql.*;
 import java.util.Scanner;
 
 public class menuBD {
+    static String user = "admin";
+    static String pass = "1234";
+    static String uri = "jdbc:mysql://localhost:3306/BD_CLIENTES";
     public static void main(String[] args) {
         Scanner entrada = new Scanner(System.in);
         String user = "admin";
         String pass = "1234";
         String uri = "jdbc:mysql://localhost:3306/BD_CLIENTES";
         int opcion;
+        String nombre,id,consulta;
+        int edad;
 
         try {
             //Creamos la conexión SQL
@@ -21,14 +26,20 @@ public class menuBD {
                     case 1:
                         entrada.nextLine();
                         System.out.println("Introduce el id del cliente");
-                        String id = entrada.nextLine();
-                        System.out.println("Introduce el nombre");
-                        String nombre = entrada.nextLine();
-                        System.out.println("Introduce la edad.");
-                        int edad = entrada.nextInt();
-                        Statement statement = conector.createStatement(); //Creamos la instruccion
-                        String consulta = "INSERT INTO clientes values ('" + id + "','" + nombre + "'," + edad + ")";
-                        System.out.println("Filas afectadas: "+ statement.executeUpdate(consulta));
+                        id = entrada.nextLine();
+                        if (!existeCliente(id)) {
+                            System.out.println("Introduce el nombre");
+                            nombre = entrada.nextLine();
+                            System.out.println("Introduce la edad.");
+                            edad = entrada.nextInt();
+                            Statement statement = conector.createStatement(); //Creamos la instruccion
+                            consulta = "INSERT INTO clientes values ('" + id + "','" + nombre + "'," + edad + ")";
+                            System.out.println("Filas afectadas: "+ statement.executeUpdate(consulta));
+                        }
+                        else {
+                            System.out.println("El cliente ya existe por lo que no se puede añadir.");
+                        }
+
                         break;
                     case 2:
                         entrada.nextLine();
@@ -55,9 +66,9 @@ public class menuBD {
                         System.out.println("Introduce el id a revisar: ");
                         nombre = entrada.nextLine();
                         Statement statement1 = conector.createStatement();
-                        consulta = "SELECT * FROM clientes WHERE id = "+nombre;
+                        consulta = "SELECT * FROM clientes WHERE id = '"+nombre+"'";
                         ResultSet rs = statement1.executeQuery(consulta);
-                        while(rs.next()) {
+                        while (rs.next()) {
                             id = rs.getString("id");
                             nombre = rs.getString("nombre");
                             edad = rs.getInt("edad");
@@ -97,5 +108,18 @@ public class menuBD {
         System.out.println("4. Consultar por id");
         System.out.println("5. Consultar todos los datos en la BBDD");
         System.out.println("6. Salir");
+    }
+    public static boolean existeCliente(String id) {
+        try {
+            Connection conector = DriverManager.getConnection(uri,user,pass);
+            Statement statement = conector.createStatement();
+            ResultSet rs = statement.executeQuery("SELECT * FROM clientes WHERE id ='"+id+"'");
+            if (rs.next()) {
+                return true;
+            }
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+        }
+        return false;
     }
     }
