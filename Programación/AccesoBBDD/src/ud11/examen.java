@@ -51,6 +51,8 @@ public class examen {
                     case 2:
                         System.out.println("Introduce el id a borrar: ");
                         id = entrada.nextInt();
+                        Statement stmt = conector.createStatement();
+
                         break;
                 }
             } while (opcion != 4);

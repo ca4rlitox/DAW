@@ -21,8 +21,8 @@ maximoDados = (numDados * 6) / 2
 
 print(f"La suma de todos los dados da {suma}")
 if maximoDados < suma:
-    print(f"Tú tirada está por encima de la mitad ({maximoDados})")
+    print(f"Tú tirada está por encima de la mitad ({int(maximoDados)})")
 elif maximoDados > suma:
-    print(f"Tu tirada está por debajo de la mitad ({maximoDados})")
+    print(f"Tu tirada está por debajo de la mitad ({int(maximoDados)})")
 else:
-    print(f"Tu tirada es exactamente la mitad {maximoDados}")
+    print(f"Tu tirada es exactamente la mitad {int(maximoDados)})")
